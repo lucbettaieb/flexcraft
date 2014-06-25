@@ -1,0 +1,6 @@
+/home/luc/Developer/flexcraft/build/CMakeFiles/clean_test_results.dir
+/home/luc/Developer/flexcraft/build/CMakeFiles/doxygen.dir
+/home/luc/Developer/flexcraft/build/gtest/CMakeFiles/gtest.dir
+/home/luc/Developer/flexcraft/build/gtest/CMakeFiles/gtest_main.dir
+/home/luc/Developer/flexcraft/build/CMakeFiles/run_tests.dir
+/home/luc/Developer/flexcraft/build/CMakeFiles/tests.dir
