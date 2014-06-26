@@ -1,3 +1,9 @@
+#Creator: Brayden Hollis
+#Created: 06/26/2014
+
+#Updated:
+#By:
+
 #This message is used to transmit which thrusters are on using limited amount of data
 
 #These constants are used for bit mapping to determine which thrusters ought to be on
