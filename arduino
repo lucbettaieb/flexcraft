@@ -1,3 +1,14 @@
+//char RFF=1
+//char RFS=2
+//char RRS=4
+//char RRR=8
+//char LRR=16
+//char LRS=32
+//char LFS=64
+//char LFF=128
+
+
+
 #include <ros.h>
 #include <std_msgs/UInt8.h>
 
