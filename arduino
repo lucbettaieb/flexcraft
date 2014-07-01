@@ -7,8 +7,6 @@
 //char LFS=64
 //char LFF=128
 
-
-
 #include <ros.h>
 #include <std_msgs/UInt8.h>
 
