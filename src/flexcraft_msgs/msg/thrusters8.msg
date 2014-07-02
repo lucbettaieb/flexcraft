@@ -9,19 +9,19 @@
 #These constants are used for bit mapping to determine which thrusters ought to be on
 #Labels are done by in three parts XXX.  The first two characters deal with location of the thrust and the third deals with direct the thruster is facing. The first character is either 'R' (right) or 'L' (left), with directions from driver in craft.  The second character is F (forward) or R (rear) where forward is infrom of driver and rear is behind driver.  The third character is F (forward), S (side), or R (rear).
 
-#char RFF=1
-#char RFS=2
-#char RRS=4
-#char RRR=8
-#char LRR=16
-#char LRS=32
-#char LFS=64
-#char LFF=128
+#uint8 RFF=1
+#uint8 RFS=2
+#uint8 RRS=4
+#uint8 RRR=8
+#uint8 LRR=16
+#uint8 LRS=32
+#uint8 LFS=64
+#uint8 LFF=128
 
 #seq is the variable to ensure most current commands are not supercede by previous commands that were delayed. 32 bits to ensure no overflow for even a 24 hour operation with a publish rate of 1000 hz
 uint32 seq
 #thrusters is the actual variable that is 1 byte (8 bits) and each bit corresponds to a separate thruster (as defined by the constants).
-char thrusters
+uint8 thrusters
 
 #example of method for determining is RFF ought to be firing:
 #
