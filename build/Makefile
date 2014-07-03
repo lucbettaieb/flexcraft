@@ -472,6 +472,19 @@ rosgraph_msgs_generate_messages_py/fast:
 .PHONY : rosgraph_msgs_generate_messages_py/fast
 
 #=============================================================================
+# Target rules for targets named translate
+
+# Build rule for target.
+translate: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 translate
+.PHONY : translate
+
+# fast build rule for target.
+translate/fast:
+	$(MAKE) -f control_sw/basic_translator/CMakeFiles/translate.dir/build.make control_sw/basic_translator/CMakeFiles/translate.dir/build
+.PHONY : translate/fast
+
+#=============================================================================
 # Target rules for targets named aswd
 
 # Build rule for target.
@@ -782,6 +795,7 @@ help:
 	@echo "... rosgraph_msgs_generate_messages_cpp"
 	@echo "... rosgraph_msgs_generate_messages_lisp"
 	@echo "... rosgraph_msgs_generate_messages_py"
+	@echo "... translate"
 	@echo "... aswd"
 	@echo "... _catkin_empty_exported_target"
 	@echo "... rosserial_msgs_gencpp"

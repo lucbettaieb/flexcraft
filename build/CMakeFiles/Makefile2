@@ -313,9 +313,9 @@ clean: flexcraft_msgs/CMakeFiles/flexcraft_msgs_gencpp.dir/clean
 # Target rules for target flexcraft_msgs/CMakeFiles/flexcraft_msgs_generate_messages.dir
 
 # All Build rule for target.
-flexcraft_msgs/CMakeFiles/flexcraft_msgs_generate_messages.dir/all: flexcraft_msgs/CMakeFiles/flexcraft_msgs_generate_messages_lisp.dir/all
-flexcraft_msgs/CMakeFiles/flexcraft_msgs_generate_messages.dir/all: flexcraft_msgs/CMakeFiles/flexcraft_msgs_generate_messages_py.dir/all
 flexcraft_msgs/CMakeFiles/flexcraft_msgs_generate_messages.dir/all: flexcraft_msgs/CMakeFiles/flexcraft_msgs_generate_messages_cpp.dir/all
+flexcraft_msgs/CMakeFiles/flexcraft_msgs_generate_messages.dir/all: flexcraft_msgs/CMakeFiles/flexcraft_msgs_generate_messages_py.dir/all
+flexcraft_msgs/CMakeFiles/flexcraft_msgs_generate_messages.dir/all: flexcraft_msgs/CMakeFiles/flexcraft_msgs_generate_messages_lisp.dir/all
 	$(MAKE) -f flexcraft_msgs/CMakeFiles/flexcraft_msgs_generate_messages.dir/build.make flexcraft_msgs/CMakeFiles/flexcraft_msgs_generate_messages.dir/depend
 	$(MAKE) -f flexcraft_msgs/CMakeFiles/flexcraft_msgs_generate_messages.dir/build.make flexcraft_msgs/CMakeFiles/flexcraft_msgs_generate_messages.dir/build
 	$(CMAKE_COMMAND) -E cmake_progress_report /home/fcs_basestation/catkin_ws/src/flexcraft/build/CMakeFiles 
@@ -694,7 +694,7 @@ clean: flexcraft_msgs/CMakeFiles/std_msgs_generate_messages_py.dir/clean
 # Directory level rules for directory control_sw/basic_translator
 
 # Convenience name for "all" pass in the directory.
-control_sw/basic_translator/all:
+control_sw/basic_translator/all: control_sw/basic_translator/CMakeFiles/translate.dir/all
 .PHONY : control_sw/basic_translator/all
 
 # Convenience name for "clean" pass in the directory.
@@ -704,6 +704,7 @@ control_sw/basic_translator/clean: control_sw/basic_translator/CMakeFiles/roscpp
 control_sw/basic_translator/clean: control_sw/basic_translator/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/clean
 control_sw/basic_translator/clean: control_sw/basic_translator/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/clean
 control_sw/basic_translator/clean: control_sw/basic_translator/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/clean
+control_sw/basic_translator/clean: control_sw/basic_translator/CMakeFiles/translate.dir/clean
 .PHONY : control_sw/basic_translator/clean
 
 # Convenience name for "preinstall" pass in the directory.
@@ -894,6 +895,41 @@ control_sw/basic_translator/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/cl
 
 # clean rule for target.
 clean: control_sw/basic_translator/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/clean
+.PHONY : clean
+
+#=============================================================================
+# Target rules for target control_sw/basic_translator/CMakeFiles/translate.dir
+
+# All Build rule for target.
+control_sw/basic_translator/CMakeFiles/translate.dir/all:
+	$(MAKE) -f control_sw/basic_translator/CMakeFiles/translate.dir/build.make control_sw/basic_translator/CMakeFiles/translate.dir/depend
+	$(MAKE) -f control_sw/basic_translator/CMakeFiles/translate.dir/build.make control_sw/basic_translator/CMakeFiles/translate.dir/build
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/fcs_basestation/catkin_ws/src/flexcraft/build/CMakeFiles  36
+	@echo "Built target translate"
+.PHONY : control_sw/basic_translator/CMakeFiles/translate.dir/all
+
+# Include target in all.
+all: control_sw/basic_translator/CMakeFiles/translate.dir/all
+.PHONY : all
+
+# Build rule for subdir invocation for target.
+control_sw/basic_translator/CMakeFiles/translate.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/fcs_basestation/catkin_ws/src/flexcraft/build/CMakeFiles 1
+	$(MAKE) -f CMakeFiles/Makefile2 control_sw/basic_translator/CMakeFiles/translate.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/fcs_basestation/catkin_ws/src/flexcraft/build/CMakeFiles 0
+.PHONY : control_sw/basic_translator/CMakeFiles/translate.dir/rule
+
+# Convenience name for target.
+translate: control_sw/basic_translator/CMakeFiles/translate.dir/rule
+.PHONY : translate
+
+# clean rule for target.
+control_sw/basic_translator/CMakeFiles/translate.dir/clean:
+	$(MAKE) -f control_sw/basic_translator/CMakeFiles/translate.dir/build.make control_sw/basic_translator/CMakeFiles/translate.dir/clean
+.PHONY : control_sw/basic_translator/CMakeFiles/translate.dir/clean
+
+# clean rule for target.
+clean: control_sw/basic_translator/CMakeFiles/translate.dir/clean
 .PHONY : clean
 
 #=============================================================================
@@ -1307,8 +1343,8 @@ clean: rosserial/rosserial_arduino/CMakeFiles/rosserial_arduino_gencpp.dir/clean
 # Target rules for target rosserial/rosserial_arduino/CMakeFiles/rosserial_arduino_generate_messages.dir
 
 # All Build rule for target.
-rosserial/rosserial_arduino/CMakeFiles/rosserial_arduino_generate_messages.dir/all: rosserial/rosserial_arduino/CMakeFiles/rosserial_arduino_generate_messages_lisp.dir/all
 rosserial/rosserial_arduino/CMakeFiles/rosserial_arduino_generate_messages.dir/all: rosserial/rosserial_arduino/CMakeFiles/rosserial_arduino_generate_messages_py.dir/all
+rosserial/rosserial_arduino/CMakeFiles/rosserial_arduino_generate_messages.dir/all: rosserial/rosserial_arduino/CMakeFiles/rosserial_arduino_generate_messages_lisp.dir/all
 rosserial/rosserial_arduino/CMakeFiles/rosserial_arduino_generate_messages.dir/all: rosserial/rosserial_arduino/CMakeFiles/rosserial_arduino_generate_messages_cpp.dir/all
 	$(MAKE) -f rosserial/rosserial_arduino/CMakeFiles/rosserial_arduino_generate_messages.dir/build.make rosserial/rosserial_arduino/CMakeFiles/rosserial_arduino_generate_messages.dir/depend
 	$(MAKE) -f rosserial/rosserial_arduino/CMakeFiles/rosserial_arduino_generate_messages.dir/build.make rosserial/rosserial_arduino/CMakeFiles/rosserial_arduino_generate_messages.dir/build

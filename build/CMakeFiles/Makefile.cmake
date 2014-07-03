@@ -266,6 +266,7 @@ SET(CMAKE_DEPEND_INFO_FILES
   "control_sw/basic_translator/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/DependInfo.cmake"
   "control_sw/basic_translator/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/DependInfo.cmake"
   "control_sw/basic_translator/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/DependInfo.cmake"
+  "control_sw/basic_translator/CMakeFiles/translate.dir/DependInfo.cmake"
   "controllers/fcs_keyboard/CMakeFiles/aswd.dir/DependInfo.cmake"
   "rosserial/rosserial/CMakeFiles/_catkin_empty_exported_target.dir/DependInfo.cmake"
   "rosserial/rosserial_msgs/CMakeFiles/rosserial_msgs_gencpp.dir/DependInfo.cmake"
