@@ -6,6 +6,9 @@
 
 #This message delivers the change in velocity for planar systems.  Typically such changes would have units, but in our current application, units our unknown, and implemenation are not in current plans. X is forward and Y is to the drivers left (follows from right hand rule with z as up).
 
+#seq
+int32 seq
+
 #linear
 float32 deltaVX
 float32 deltaVY
