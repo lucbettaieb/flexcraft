@@ -6,6 +6,7 @@ project(keyboard)
 ## is used, also find other catkin packages
 find_package(catkin REQUIRED COMPONENTS
   flexcraft_msgs
+  geometry_msgs
   roscpp
   rospy
   std_msgs
@@ -68,7 +69,7 @@ find_package(catkin REQUIRED COMPONENTS
 ## Generate added messages and services with any dependencies listed here
 # generate_messages(
 #   DEPENDENCIES
-#   flexcraft_msgs#   std_msgs
+#   flexcraft_msgs#   geometry_msgs#   std_msgs
 # )
 
 ###################################
@@ -83,7 +84,7 @@ find_package(catkin REQUIRED COMPONENTS
 catkin_package(
 #  INCLUDE_DIRS include
 #  LIBRARIES keyboard
-#  CATKIN_DEPENDS flexcraft_msgs roscpp rospy std_msgs
+#  CATKIN_DEPENDS flexcraft_msgs geometry_msgs roscpp rospy std_msgs
 #  DEPENDS system_lib
 )
 
@@ -162,3 +163,8 @@ include_directories(
 
 ## Add folders to be run by python nosetests
 # catkin_add_nosetests(test)
+
+include_directories(include ${catkin_INCLUDE_DIRS})
+
+add_executable(aswd_input src/aswd_input.cpp)
+target_link_libraries(aswd_input ${catkin_LIBRARIES})
