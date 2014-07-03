@@ -12,6 +12,7 @@ namespace flexcraft_msgs
   class deltaV2D : public ros::Msg
   {
     public:
+      int32_t seq;
       float deltaVX;
       float deltaVY;
       float alpha;
@@ -19,6 +20,16 @@ namespace flexcraft_msgs
     virtual int serialize(unsigned char *outbuffer) const
     {
       int offset = 0;
+      union {
+        int32_t real;
+        uint32_t base;
+      } u_seq;
+      u_seq.real = this->seq;
+      *(outbuffer + offset + 0) = (u_seq.base >> (8 * 0)) & 0xFF;
+      *(outbuffer + offset + 1) = (u_seq.base >> (8 * 1)) & 0xFF;
+      *(outbuffer + offset + 2) = (u_seq.base >> (8 * 2)) & 0xFF;
+      *(outbuffer + offset + 3) = (u_seq.base >> (8 * 3)) & 0xFF;
+      offset += sizeof(this->seq);
       union {
         float real;
         uint32_t base;
@@ -56,6 +67,17 @@ namespace flexcraft_msgs
     {
       int offset = 0;
       union {
+        int32_t real;
+        uint32_t base;
+      } u_seq;
+      u_seq.base = 0;
+      u_seq.base |= ((uint32_t) (*(inbuffer + offset + 0))) << (8 * 0);
+      u_seq.base |= ((uint32_t) (*(inbuffer + offset + 1))) << (8 * 1);
+      u_seq.base |= ((uint32_t) (*(inbuffer + offset + 2))) << (8 * 2);
+      u_seq.base |= ((uint32_t) (*(inbuffer + offset + 3))) << (8 * 3);
+      this->seq = u_seq.real;
+      offset += sizeof(this->seq);
+      union {
         float real;
         uint32_t base;
       } u_deltaVX;
@@ -92,7 +114,7 @@ namespace flexcraft_msgs
     }
 
     const char * getType(){ return "flexcraft_msgs/deltaV2D"; };
-    const char * getMD5(){ return "f241871ae291386cceaa12204ef3c616"; };
+    const char * getMD5(){ return "cc945e072720b11f9e99a2deff5e3570"; };
 
   };
 

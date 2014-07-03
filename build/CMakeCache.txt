@@ -283,11 +283,23 @@ controllers_SOURCE_DIR:STATIC=/home/fcs_basestation/catkin_ws/src/flexcraft/src/
 //The directory containing a CMake configuration file for cpp_common.
 cpp_common_DIR:PATH=/opt/ros/hydro/share/cpp_common/cmake
 
+//The directory containing a CMake configuration file for diagnostic_msgs.
+diagnostic_msgs_DIR:PATH=/opt/ros/hydro/share/diagnostic_msgs/cmake
+
+//The directory containing a CMake configuration file for diagnostic_updater.
+diagnostic_updater_DIR:PATH=/opt/ros/hydro/share/diagnostic_updater/cmake
+
 //Value Computed by CMake
 fcs_keyboard_BINARY_DIR:STATIC=/home/fcs_basestation/catkin_ws/src/flexcraft/build/controllers/fcs_keyboard
 
 //Value Computed by CMake
 fcs_keyboard_SOURCE_DIR:STATIC=/home/fcs_basestation/catkin_ws/src/flexcraft/src/controllers/fcs_keyboard
+
+//Value Computed by CMake
+fcs_spacenav_BINARY_DIR:STATIC=/home/fcs_basestation/catkin_ws/src/flexcraft/build/controllers/fcs_spacenav
+
+//Value Computed by CMake
+fcs_spacenav_SOURCE_DIR:STATIC=/home/fcs_basestation/catkin_ws/src/flexcraft/src/controllers/fcs_spacenav
 
 //Value Computed by CMake
 flexcraft_msgs_BINARY_DIR:STATIC=/home/fcs_basestation/catkin_ws/src/flexcraft/build/flexcraft_msgs
@@ -338,14 +350,32 @@ gtest_force_shared_crt:BOOL=OFF
 //Dependencies for the target
 gtest_main_LIB_DEPENDS:STATIC=general;-lpthread;general;gtest;
 
+//Value Computed by CMake
+joy_BINARY_DIR:STATIC=/home/fcs_basestation/catkin_ws/src/flexcraft/build/controllers/joystick_drivers/joy
+
+//Value Computed by CMake
+joy_SOURCE_DIR:STATIC=/home/fcs_basestation/catkin_ws/src/flexcraft/src/controllers/joystick_drivers/joy
+
+//Value Computed by CMake
+joystick_drivers_BINARY_DIR:STATIC=/home/fcs_basestation/catkin_ws/src/flexcraft/build/controllers/joystick_drivers/joystick_drivers
+
+//Value Computed by CMake
+joystick_drivers_SOURCE_DIR:STATIC=/home/fcs_basestation/catkin_ws/src/flexcraft/src/controllers/joystick_drivers/joystick_drivers
+
 //Path to a library.
-lib:FILEPATH=/opt/ros/hydro/lib/libtopic_tools.so
+lib:FILEPATH=/opt/ros/hydro/lib/libroslib.so
 
 //The directory containing a CMake configuration file for message_generation.
 message_generation_DIR:PATH=/opt/ros/hydro/share/message_generation/cmake
 
 //The directory containing a CMake configuration file for message_runtime.
 message_runtime_DIR:PATH=/opt/ros/hydro/share/message_runtime/cmake
+
+//Value Computed by CMake
+ps3joy_BINARY_DIR:STATIC=/home/fcs_basestation/catkin_ws/src/flexcraft/build/controllers/joystick_drivers/ps3joy
+
+//Value Computed by CMake
+ps3joy_SOURCE_DIR:STATIC=/home/fcs_basestation/catkin_ws/src/flexcraft/src/controllers/joystick_drivers/ps3joy
 
 //The directory containing a CMake configuration file for rosconsole.
 rosconsole_DIR:PATH=/opt/ros/hydro/share/rosconsole/cmake
@@ -359,8 +389,14 @@ roscpp_serialization_DIR:PATH=/opt/ros/hydro/share/roscpp_serialization/cmake
 //The directory containing a CMake configuration file for roscpp_traits.
 roscpp_traits_DIR:PATH=/opt/ros/hydro/share/roscpp_traits/cmake
 
+//The directory containing a CMake configuration file for rosgraph.
+rosgraph_DIR:PATH=/opt/ros/hydro/share/rosgraph/cmake
+
 //The directory containing a CMake configuration file for rosgraph_msgs.
 rosgraph_msgs_DIR:PATH=/opt/ros/hydro/share/rosgraph_msgs/cmake
+
+//The directory containing a CMake configuration file for roslib.
+roslib_DIR:PATH=/opt/ros/hydro/share/roslib/cmake
 
 //The directory containing a CMake configuration file for rospy.
 rospy_DIR:PATH=/opt/ros/hydro/share/rospy/cmake
@@ -425,11 +461,35 @@ rosserial_xbee_SOURCE_DIR:STATIC=/home/fcs_basestation/catkin_ws/src/flexcraft/s
 //The directory containing a CMake configuration file for rostime.
 rostime_DIR:PATH=/opt/ros/hydro/share/rostime/cmake
 
+//The directory containing a CMake configuration file for sensor_msgs.
+sensor_msgs_DIR:PATH=/opt/ros/hydro/share/sensor_msgs/cmake
+
+//Value Computed by CMake
+spacenav_node_BINARY_DIR:STATIC=/home/fcs_basestation/catkin_ws/src/flexcraft/build/controllers/joystick_drivers/spacenav_node
+
+//The directory containing a CMake configuration file for spacenav_node.
+spacenav_node_DIR:PATH=/home/fcs_basestation/catkin_ws/src/flexcraft/devel/share/spacenav_node/cmake
+
+//Value Computed by CMake
+spacenav_node_SOURCE_DIR:STATIC=/home/fcs_basestation/catkin_ws/src/flexcraft/src/controllers/joystick_drivers/spacenav_node
+
+//The directory containing a CMake configuration file for std_msg.
+std_msg_DIR:PATH=std_msg_DIR-NOTFOUND
+
 //The directory containing a CMake configuration file for std_msgs.
 std_msgs_DIR:PATH=/opt/ros/hydro/share/std_msgs/cmake
 
+//The directory containing a CMake configuration file for std_srvs.
+std_srvs_DIR:PATH=/opt/ros/hydro/share/std_srvs/cmake
+
 //The directory containing a CMake configuration file for topic_tools.
 topic_tools_DIR:PATH=/opt/ros/hydro/share/topic_tools/cmake
+
+//Value Computed by CMake
+wiimote_BINARY_DIR:STATIC=/home/fcs_basestation/catkin_ws/src/flexcraft/build/controllers/joystick_drivers/wiimote
+
+//Value Computed by CMake
+wiimote_SOURCE_DIR:STATIC=/home/fcs_basestation/catkin_ws/src/flexcraft/src/controllers/joystick_drivers/wiimote
 
 //The directory containing a CMake configuration file for xmlrpcpp.
 xmlrpcpp_DIR:PATH=/opt/ros/hydro/share/xmlrpcpp/cmake
@@ -562,7 +622,7 @@ CMAKE_MODULE_LINKER_FLAGS_RELWITHDEBINFO-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_NM
 CMAKE_NM-ADVANCED:INTERNAL=1
 //number of local generators
-CMAKE_NUMBER_OF_LOCAL_GENERATORS:INTERNAL=14
+CMAKE_NUMBER_OF_LOCAL_GENERATORS:INTERNAL=20
 //ADVANCED property for variable: CMAKE_OBJCOPY
 CMAKE_OBJCOPY-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_OBJDUMP
@@ -610,6 +670,8 @@ GTEST_LIBRARY_DEBUG-ADVANCED:INTERNAL=1
 GTEST_MAIN_LIBRARY-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: GTEST_MAIN_LIBRARY_DEBUG
 GTEST_MAIN_LIBRARY_DEBUG-ADVANCED:INTERNAL=1
+//Have include HAVE_LINUX_JOYSTICK_H
+HAVE_LINUX_JOYSTICK_H:INTERNAL=1
 //ADVANCED property for variable: PYTHON_EXECUTABLE
 PYTHON_EXECUTABLE-ADVANCED:INTERNAL=1
 //This needs to be in PYTHONPATH when 'setup.py install' is called.

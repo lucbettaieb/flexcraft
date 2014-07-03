@@ -1,11 +1,11 @@
-//char RFF=1
-//char RFS=2
-//char RRS=4
-//char RRR=8
-//char LRR=16
-//char LRS=32
-//char LFS=64
-//char LFF=128
+//const char RFF=1;
+//const char RFS=2;
+//const char RRS=4;
+//const char RRR=8;
+//const char LRR=16;
+///const char LRS=32;
+//const char LFS=64;
+//const char LFF=128;
 
 #include <ros.h>
 #include <std_msgs/UInt8.h>
@@ -16,24 +16,24 @@ ros::NodeHandle  nh;
 void messageCb(const flexcraft_msgs::thrusters8& msg)
 { unsigned char thruster_control = msg.thrusters;
 
-  if (thruster_control % 2)
+  if (thruster_control & msg.RFF)
     digitalWrite(6, HIGH);
-  if ((thruster_control >> 1) % 2)
+  if (thruster_control & thrusters8.RFS)
     digitalWrite(7, HIGH);
-  if ((thruster_control >> 2) % 2)
+  if (thruster_control & thrusters8.RRS)
     digitalWrite(8, HIGH);
-  if ((thruster_control >> 3) % 2)
+  if (thruster_control & flexcraft_msgs.thrusters8.RRR)
     digitalWrite(9, HIGH);
-  if ((thruster_control >> 4) % 2)
+  if (thruster_control & flexcraft_msgs.thrusters8.LRR)
     digitalWrite(10, HIGH);
-  if ((thruster_control >> 5) % 2)
+  if (thruster_control & flexcraft_msgs.thrusters8.LRS)
     digitalWrite(11, HIGH);
-  if ((thruster_control >> 6) % 2)
+  if (thruster_control & flexcraft_msgs.thrusters8.LFS)
     digitalWrite(12, HIGH);
-  if ((thruster_control >> 7) % 2)
+  if (thruster_control & flexcraft_msgs.thrusters8.LFF)
     digitalWrite(13, HIGH);
 
-  //OFF
+/*  //OFF
   delay(2000);
   digitalWrite(6, LOW);
   digitalWrite(7, LOW);
@@ -43,10 +43,10 @@ void messageCb(const flexcraft_msgs::thrusters8& msg)
   digitalWrite(11, LOW);
   digitalWrite(12, LOW);
  digitalWrite(13, LOW);
-  delay(500);
+  delay(500);*/
 }
 
-ros::Subscriber<flexcraft_msgs::thrusters8> sub("thruster_one", &messageCb );
+ros::Subscriber<flexcraft_msgs::thrusters8> sub("cmd_low", &messageCb );
 
 void setup()
 { pinMode(6, OUTPUT);
@@ -64,6 +64,6 @@ void setup()
 void loop()
 {
   nh.spinOnce();
-  delay(1000);
+//  delay(1000);
 }
 

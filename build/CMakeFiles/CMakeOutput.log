@@ -291,3 +291,18 @@ Linking C executable cmTryCompileExec
 make[1]: Leaving directory `/home/fcs_basestation/catkin_ws/src/flexcraft/build/CMakeFiles/CMakeTmp'
 
 
+Determining if files linux/joystick.h exist passed with the following output:
+Change Dir: /home/fcs_basestation/catkin_ws/src/flexcraft/build/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/make "cmTryCompileExec/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec.dir/build.make CMakeFiles/cmTryCompileExec.dir/build
+make[1]: Entering directory `/home/fcs_basestation/catkin_ws/src/flexcraft/build/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /home/fcs_basestation/catkin_ws/src/flexcraft/build/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec.dir/CheckIncludeFiles.c.o
+/usr/bin/gcc    -o CMakeFiles/cmTryCompileExec.dir/CheckIncludeFiles.c.o   -c /home/fcs_basestation/catkin_ws/src/flexcraft/build/CMakeFiles/CMakeTmp/CheckIncludeFiles.c
+Linking C executable cmTryCompileExec
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec.dir/link.txt --verbose=1
+/usr/bin/gcc         CMakeFiles/cmTryCompileExec.dir/CheckIncludeFiles.c.o  -o cmTryCompileExec -rdynamic 
+make[1]: Leaving directory `/home/fcs_basestation/catkin_ws/src/flexcraft/build/CMakeFiles/CMakeTmp'
+
+

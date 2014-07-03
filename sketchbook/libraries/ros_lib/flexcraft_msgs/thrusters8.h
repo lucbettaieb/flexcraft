@@ -14,6 +14,14 @@ namespace flexcraft_msgs
     public:
       uint32_t seq;
       uint8_t thrusters;
+      enum { RFF = 1 };
+      enum { RFS = 2 };
+      enum { RRS = 4 };
+      enum { RRR = 8 };
+      enum { LRR = 16 };
+      enum { LRS = 32 };
+      enum { LFS = 64 };
+      enum { LFF = 128 };
 
     virtual int serialize(unsigned char *outbuffer) const
     {
@@ -42,7 +50,7 @@ namespace flexcraft_msgs
     }
 
     const char * getType(){ return "flexcraft_msgs/thrusters8"; };
-    const char * getMD5(){ return "370bbe62d17a52f681cf14a95ef34b00"; };
+    const char * getMD5(){ return "49cc847cae22582ecb6976c2b435a06f"; };
 
   };
 
