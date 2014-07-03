@@ -1,2 +1,2 @@
 - setup-file:
-    local-name: /home/luc/Developer/flexcraft/install/setup.sh
+    local-name: /home/fcs_basestation/catkin_ws/src/flexcraft/install/setup.sh
