@@ -18,19 +18,19 @@ void messageCb(const flexcraft_msgs::thrusters8& msg)
 
   if (thruster_control & msg.RFF)
     digitalWrite(6, HIGH);
-  if (thruster_control & thrusters8.RFS)
+  if (thruster_control & msg.RFS)
     digitalWrite(7, HIGH);
-  if (thruster_control & thrusters8.RRS)
+  if (thruster_control & msg.RRS)
     digitalWrite(8, HIGH);
-  if (thruster_control & flexcraft_msgs.thrusters8.RRR)
+  if (thruster_control & msg.RRR)
     digitalWrite(9, HIGH);
-  if (thruster_control & flexcraft_msgs.thrusters8.LRR)
+  if (thruster_control & msg.LRR)
     digitalWrite(10, HIGH);
-  if (thruster_control & flexcraft_msgs.thrusters8.LRS)
+  if (thruster_control & msg.LRS)
     digitalWrite(11, HIGH);
-  if (thruster_control & flexcraft_msgs.thrusters8.LFS)
+  if (thruster_control & msg.LFS)
     digitalWrite(12, HIGH);
-  if (thruster_control & flexcraft_msgs.thrusters8.LFF)
+  if (thruster_control & msg.LFF)
     digitalWrite(13, HIGH);
 
 /*  //OFF
