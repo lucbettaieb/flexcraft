@@ -101,6 +101,7 @@ IF(NOT CMAKE_INSTALL_LOCAL_ONLY)
   INCLUDE("/home/fcs_basestation/catkin_ws/src/flexcraft/build/rosserial/rosserial_windows/cmake_install.cmake")
   INCLUDE("/home/fcs_basestation/catkin_ws/src/flexcraft/build/rosserial/rosserial_xbee/cmake_install.cmake")
   INCLUDE("/home/fcs_basestation/catkin_ws/src/flexcraft/build/controllers/joystick_drivers/spacenav_node/cmake_install.cmake")
+  INCLUDE("/home/fcs_basestation/catkin_ws/src/flexcraft/build/controllers/fcs_spacenav/cmake_install.cmake")
   INCLUDE("/home/fcs_basestation/catkin_ws/src/flexcraft/build/controllers/joystick_drivers/wiimote/cmake_install.cmake")
 
 ENDIF(NOT CMAKE_INSTALL_LOCAL_ONLY)

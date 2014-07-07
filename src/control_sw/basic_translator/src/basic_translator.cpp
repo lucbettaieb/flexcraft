@@ -3,14 +3,14 @@
 #include "flexcraft_msgs/thrusters8.h"
 
 // definitions of the bits for each thruster (the first value is which side (left or right), the second value is front or rear, and the third value is direction sideways (corresponding to side), forward, or backward).
-/*const char RFF = 1;
+const char RFF = 1;
 const char RFS = 2;
 const char RRS = 4;
 const char RRR = 8;
 const char LRR = 16;
 const char LRS = 32;
 const char LFS = 64;
-const char LFF = 128;*/
+const char LFF = 128;
 
 // thruster bit - global so publishing happens in code at one place, allowing for time outs
 char thrusters;
@@ -21,32 +21,32 @@ void deltaVCallback(const flexcraft_msgs::deltaV2D::ConstPtr& msg) {
   if(msg->deltaVX < 0) {
 		// move backward - fire forward facing thrusters
 		ROS_INFO("Backward");
-		thrusters = thrusters | msg.RFF | msg.LFF;
+		thrusters = thrusters | RFF | LFF;
 	} else if(msg->deltaVX > 0) {
 		// move forward - fire backward facing thrusters
 		ROS_INFO("Forward");
-		thrusters = thrusters | msg.RRR | msg.LRR;
+		thrusters = thrusters | RRR | LRR;
 	}
 
 	if(msg->deltaVY < 0) {
 		// move to right - fire left thrusters
 		ROS_INFO("Right");
-		thrusters = thrusters | msg.LRS | msg.LFS;
+		thrusters = thrusters | LRS | LFS;
 	} else if(msg->deltaVY > 0) {
 		// move to left - fire right thrusters
 		ROS_INFO("Left");
-		thrusters = thrusters | msg.RRS | msg.RFS;
+		thrusters = thrusters | RRS | RFS;
 	}
 
 	// rotation - use side thrusters as more sysmetric from center of mass
 	if(msg->alpha < 0) {
 		// move clockwise
 		ROS_INFO("Clockwise");
-		thrusters = thrusters | msg.LFS | msg.RRS;
+		thrusters = thrusters | LFS | RRS;
 	} else if(msg->alpha > 0) {
 		// move counterclockwise
 		ROS_INFO("Counterclockwise");
-		thrusters = thrusters | msg.LRS | msg.RFS;
+		thrusters = thrusters | LRS | RFS;
 	}
 }
 
