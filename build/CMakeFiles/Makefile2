@@ -314,8 +314,8 @@ clean: flexcraft_msgs/CMakeFiles/flexcraft_msgs_gencpp.dir/clean
 
 # All Build rule for target.
 flexcraft_msgs/CMakeFiles/flexcraft_msgs_generate_messages.dir/all: flexcraft_msgs/CMakeFiles/flexcraft_msgs_generate_messages_cpp.dir/all
-flexcraft_msgs/CMakeFiles/flexcraft_msgs_generate_messages.dir/all: flexcraft_msgs/CMakeFiles/flexcraft_msgs_generate_messages_py.dir/all
 flexcraft_msgs/CMakeFiles/flexcraft_msgs_generate_messages.dir/all: flexcraft_msgs/CMakeFiles/flexcraft_msgs_generate_messages_lisp.dir/all
+flexcraft_msgs/CMakeFiles/flexcraft_msgs_generate_messages.dir/all: flexcraft_msgs/CMakeFiles/flexcraft_msgs_generate_messages_py.dir/all
 	$(MAKE) -f flexcraft_msgs/CMakeFiles/flexcraft_msgs_generate_messages.dir/build.make flexcraft_msgs/CMakeFiles/flexcraft_msgs_generate_messages.dir/depend
 	$(MAKE) -f flexcraft_msgs/CMakeFiles/flexcraft_msgs_generate_messages.dir/build.make flexcraft_msgs/CMakeFiles/flexcraft_msgs_generate_messages.dir/build
 	$(CMAKE_COMMAND) -E cmake_progress_report /home/fcs_basestation/catkin_ws/src/flexcraft/build/CMakeFiles 
@@ -904,7 +904,7 @@ clean: control_sw/basic_translator/CMakeFiles/rosgraph_msgs_generate_messages_py
 control_sw/basic_translator/CMakeFiles/translate.dir/all:
 	$(MAKE) -f control_sw/basic_translator/CMakeFiles/translate.dir/build.make control_sw/basic_translator/CMakeFiles/translate.dir/depend
 	$(MAKE) -f control_sw/basic_translator/CMakeFiles/translate.dir/build.make control_sw/basic_translator/CMakeFiles/translate.dir/build
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/fcs_basestation/catkin_ws/src/flexcraft/build/CMakeFiles  39
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/fcs_basestation/catkin_ws/src/flexcraft/build/CMakeFiles  38
 	@echo "Built target translate"
 .PHONY : control_sw/basic_translator/CMakeFiles/translate.dir/all
 
@@ -1271,56 +1271,6 @@ clean: controllers/joystick_drivers/joystick_drivers/CMakeFiles/_catkin_empty_ex
 .PHONY : clean
 
 #=============================================================================
-# Directory level rules for directory controllers/joystick_drivers/ps3joy
-
-# Convenience name for "all" pass in the directory.
-controllers/joystick_drivers/ps3joy/all: controllers/joystick_drivers/ps3joy/CMakeFiles/sixpair.dir/all
-.PHONY : controllers/joystick_drivers/ps3joy/all
-
-# Convenience name for "clean" pass in the directory.
-controllers/joystick_drivers/ps3joy/clean: controllers/joystick_drivers/ps3joy/CMakeFiles/sixpair.dir/clean
-.PHONY : controllers/joystick_drivers/ps3joy/clean
-
-# Convenience name for "preinstall" pass in the directory.
-controllers/joystick_drivers/ps3joy/preinstall:
-.PHONY : controllers/joystick_drivers/ps3joy/preinstall
-
-#=============================================================================
-# Target rules for target controllers/joystick_drivers/ps3joy/CMakeFiles/sixpair.dir
-
-# All Build rule for target.
-controllers/joystick_drivers/ps3joy/CMakeFiles/sixpair.dir/all:
-	$(MAKE) -f controllers/joystick_drivers/ps3joy/CMakeFiles/sixpair.dir/build.make controllers/joystick_drivers/ps3joy/CMakeFiles/sixpair.dir/depend
-	$(MAKE) -f controllers/joystick_drivers/ps3joy/CMakeFiles/sixpair.dir/build.make controllers/joystick_drivers/ps3joy/CMakeFiles/sixpair.dir/build
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/fcs_basestation/catkin_ws/src/flexcraft/build/CMakeFiles  37
-	@echo "Built target sixpair"
-.PHONY : controllers/joystick_drivers/ps3joy/CMakeFiles/sixpair.dir/all
-
-# Include target in all.
-all: controllers/joystick_drivers/ps3joy/CMakeFiles/sixpair.dir/all
-.PHONY : all
-
-# Build rule for subdir invocation for target.
-controllers/joystick_drivers/ps3joy/CMakeFiles/sixpair.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/fcs_basestation/catkin_ws/src/flexcraft/build/CMakeFiles 1
-	$(MAKE) -f CMakeFiles/Makefile2 controllers/joystick_drivers/ps3joy/CMakeFiles/sixpair.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/fcs_basestation/catkin_ws/src/flexcraft/build/CMakeFiles 0
-.PHONY : controllers/joystick_drivers/ps3joy/CMakeFiles/sixpair.dir/rule
-
-# Convenience name for target.
-sixpair: controllers/joystick_drivers/ps3joy/CMakeFiles/sixpair.dir/rule
-.PHONY : sixpair
-
-# clean rule for target.
-controllers/joystick_drivers/ps3joy/CMakeFiles/sixpair.dir/clean:
-	$(MAKE) -f controllers/joystick_drivers/ps3joy/CMakeFiles/sixpair.dir/build.make controllers/joystick_drivers/ps3joy/CMakeFiles/sixpair.dir/clean
-.PHONY : controllers/joystick_drivers/ps3joy/CMakeFiles/sixpair.dir/clean
-
-# clean rule for target.
-clean: controllers/joystick_drivers/ps3joy/CMakeFiles/sixpair.dir/clean
-.PHONY : clean
-
-#=============================================================================
 # Directory level rules for directory rosserial/rosserial
 
 # Convenience name for "all" pass in the directory.
@@ -1406,8 +1356,8 @@ clean: rosserial/rosserial_msgs/CMakeFiles/rosserial_msgs_gencpp.dir/clean
 # Target rules for target rosserial/rosserial_msgs/CMakeFiles/rosserial_msgs_generate_messages.dir
 
 # All Build rule for target.
-rosserial/rosserial_msgs/CMakeFiles/rosserial_msgs_generate_messages.dir/all: rosserial/rosserial_msgs/CMakeFiles/rosserial_msgs_generate_messages_py.dir/all
 rosserial/rosserial_msgs/CMakeFiles/rosserial_msgs_generate_messages.dir/all: rosserial/rosserial_msgs/CMakeFiles/rosserial_msgs_generate_messages_cpp.dir/all
+rosserial/rosserial_msgs/CMakeFiles/rosserial_msgs_generate_messages.dir/all: rosserial/rosserial_msgs/CMakeFiles/rosserial_msgs_generate_messages_py.dir/all
 rosserial/rosserial_msgs/CMakeFiles/rosserial_msgs_generate_messages.dir/all: rosserial/rosserial_msgs/CMakeFiles/rosserial_msgs_generate_messages_lisp.dir/all
 	$(MAKE) -f rosserial/rosserial_msgs/CMakeFiles/rosserial_msgs_generate_messages.dir/build.make rosserial/rosserial_msgs/CMakeFiles/rosserial_msgs_generate_messages.dir/depend
 	$(MAKE) -f rosserial/rosserial_msgs/CMakeFiles/rosserial_msgs_generate_messages.dir/build.make rosserial/rosserial_msgs/CMakeFiles/rosserial_msgs_generate_messages.dir/build
@@ -1650,9 +1600,9 @@ clean: rosserial/rosserial_arduino/CMakeFiles/rosserial_arduino_gencpp.dir/clean
 # Target rules for target rosserial/rosserial_arduino/CMakeFiles/rosserial_arduino_generate_messages.dir
 
 # All Build rule for target.
-rosserial/rosserial_arduino/CMakeFiles/rosserial_arduino_generate_messages.dir/all: rosserial/rosserial_arduino/CMakeFiles/rosserial_arduino_generate_messages_py.dir/all
-rosserial/rosserial_arduino/CMakeFiles/rosserial_arduino_generate_messages.dir/all: rosserial/rosserial_arduino/CMakeFiles/rosserial_arduino_generate_messages_cpp.dir/all
 rosserial/rosserial_arduino/CMakeFiles/rosserial_arduino_generate_messages.dir/all: rosserial/rosserial_arduino/CMakeFiles/rosserial_arduino_generate_messages_lisp.dir/all
+rosserial/rosserial_arduino/CMakeFiles/rosserial_arduino_generate_messages.dir/all: rosserial/rosserial_arduino/CMakeFiles/rosserial_arduino_generate_messages_cpp.dir/all
+rosserial/rosserial_arduino/CMakeFiles/rosserial_arduino_generate_messages.dir/all: rosserial/rosserial_arduino/CMakeFiles/rosserial_arduino_generate_messages_py.dir/all
 	$(MAKE) -f rosserial/rosserial_arduino/CMakeFiles/rosserial_arduino_generate_messages.dir/build.make rosserial/rosserial_arduino/CMakeFiles/rosserial_arduino_generate_messages.dir/depend
 	$(MAKE) -f rosserial/rosserial_arduino/CMakeFiles/rosserial_arduino_generate_messages.dir/build.make rosserial/rosserial_arduino/CMakeFiles/rosserial_arduino_generate_messages.dir/build
 	$(CMAKE_COMMAND) -E cmake_progress_report /home/fcs_basestation/catkin_ws/src/flexcraft/build/CMakeFiles 
@@ -2103,7 +2053,7 @@ controllers/joystick_drivers/spacenav_node/preinstall:
 controllers/joystick_drivers/spacenav_node/CMakeFiles/spacenav_node.dir/all:
 	$(MAKE) -f controllers/joystick_drivers/spacenav_node/CMakeFiles/spacenav_node.dir/build.make controllers/joystick_drivers/spacenav_node/CMakeFiles/spacenav_node.dir/depend
 	$(MAKE) -f controllers/joystick_drivers/spacenav_node/CMakeFiles/spacenav_node.dir/build.make controllers/joystick_drivers/spacenav_node/CMakeFiles/spacenav_node.dir/build
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/fcs_basestation/catkin_ws/src/flexcraft/build/CMakeFiles  38
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/fcs_basestation/catkin_ws/src/flexcraft/build/CMakeFiles  37
 	@echo "Built target spacenav_node"
 .PHONY : controllers/joystick_drivers/spacenav_node/CMakeFiles/spacenav_node.dir/all
 
@@ -2298,8 +2248,8 @@ clean: controllers/joystick_drivers/wiimote/CMakeFiles/wiimote_gencpp.dir/clean
 # Target rules for target controllers/joystick_drivers/wiimote/CMakeFiles/wiimote_generate_messages.dir
 
 # All Build rule for target.
-controllers/joystick_drivers/wiimote/CMakeFiles/wiimote_generate_messages.dir/all: controllers/joystick_drivers/wiimote/CMakeFiles/wiimote_generate_messages_py.dir/all
 controllers/joystick_drivers/wiimote/CMakeFiles/wiimote_generate_messages.dir/all: controllers/joystick_drivers/wiimote/CMakeFiles/wiimote_generate_messages_cpp.dir/all
+controllers/joystick_drivers/wiimote/CMakeFiles/wiimote_generate_messages.dir/all: controllers/joystick_drivers/wiimote/CMakeFiles/wiimote_generate_messages_py.dir/all
 controllers/joystick_drivers/wiimote/CMakeFiles/wiimote_generate_messages.dir/all: controllers/joystick_drivers/wiimote/CMakeFiles/wiimote_generate_messages_lisp.dir/all
 	$(MAKE) -f controllers/joystick_drivers/wiimote/CMakeFiles/wiimote_generate_messages.dir/build.make controllers/joystick_drivers/wiimote/CMakeFiles/wiimote_generate_messages.dir/depend
 	$(MAKE) -f controllers/joystick_drivers/wiimote/CMakeFiles/wiimote_generate_messages.dir/build.make controllers/joystick_drivers/wiimote/CMakeFiles/wiimote_generate_messages.dir/build
@@ -2340,7 +2290,7 @@ controllers/joystick_drivers/wiimote/CMakeFiles/wiimote_generate_messages_cpp.di
 controllers/joystick_drivers/wiimote/CMakeFiles/wiimote_generate_messages_cpp.dir/all: controllers/joystick_drivers/joy/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/all
 	$(MAKE) -f controllers/joystick_drivers/wiimote/CMakeFiles/wiimote_generate_messages_cpp.dir/build.make controllers/joystick_drivers/wiimote/CMakeFiles/wiimote_generate_messages_cpp.dir/depend
 	$(MAKE) -f controllers/joystick_drivers/wiimote/CMakeFiles/wiimote_generate_messages_cpp.dir/build.make controllers/joystick_drivers/wiimote/CMakeFiles/wiimote_generate_messages_cpp.dir/build
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/fcs_basestation/catkin_ws/src/flexcraft/build/CMakeFiles  40 41 42
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/fcs_basestation/catkin_ws/src/flexcraft/build/CMakeFiles  39 40 41
 	@echo "Built target wiimote_generate_messages_cpp"
 .PHONY : controllers/joystick_drivers/wiimote/CMakeFiles/wiimote_generate_messages_cpp.dir/all
 
@@ -2373,7 +2323,7 @@ controllers/joystick_drivers/wiimote/CMakeFiles/wiimote_generate_messages_lisp.d
 controllers/joystick_drivers/wiimote/CMakeFiles/wiimote_generate_messages_lisp.dir/all: controllers/joystick_drivers/joy/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/all
 	$(MAKE) -f controllers/joystick_drivers/wiimote/CMakeFiles/wiimote_generate_messages_lisp.dir/build.make controllers/joystick_drivers/wiimote/CMakeFiles/wiimote_generate_messages_lisp.dir/depend
 	$(MAKE) -f controllers/joystick_drivers/wiimote/CMakeFiles/wiimote_generate_messages_lisp.dir/build.make controllers/joystick_drivers/wiimote/CMakeFiles/wiimote_generate_messages_lisp.dir/build
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/fcs_basestation/catkin_ws/src/flexcraft/build/CMakeFiles  43 44 45
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/fcs_basestation/catkin_ws/src/flexcraft/build/CMakeFiles  42 43 44
 	@echo "Built target wiimote_generate_messages_lisp"
 .PHONY : controllers/joystick_drivers/wiimote/CMakeFiles/wiimote_generate_messages_lisp.dir/all
 
@@ -2406,7 +2356,7 @@ controllers/joystick_drivers/wiimote/CMakeFiles/wiimote_generate_messages_py.dir
 controllers/joystick_drivers/wiimote/CMakeFiles/wiimote_generate_messages_py.dir/all: controllers/joystick_drivers/joy/CMakeFiles/sensor_msgs_generate_messages_py.dir/all
 	$(MAKE) -f controllers/joystick_drivers/wiimote/CMakeFiles/wiimote_generate_messages_py.dir/build.make controllers/joystick_drivers/wiimote/CMakeFiles/wiimote_generate_messages_py.dir/depend
 	$(MAKE) -f controllers/joystick_drivers/wiimote/CMakeFiles/wiimote_generate_messages_py.dir/build.make controllers/joystick_drivers/wiimote/CMakeFiles/wiimote_generate_messages_py.dir/build
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/fcs_basestation/catkin_ws/src/flexcraft/build/CMakeFiles  46 47 48 49
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/fcs_basestation/catkin_ws/src/flexcraft/build/CMakeFiles  45 46 47 48
 	@echo "Built target wiimote_generate_messages_py"
 .PHONY : controllers/joystick_drivers/wiimote/CMakeFiles/wiimote_generate_messages_py.dir/all
 

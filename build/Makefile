@@ -602,19 +602,6 @@ _catkin_empty_exported_target/fast:
 .PHONY : _catkin_empty_exported_target/fast
 
 #=============================================================================
-# Target rules for targets named sixpair
-
-# Build rule for target.
-sixpair: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 sixpair
-.PHONY : sixpair
-
-# fast build rule for target.
-sixpair/fast:
-	$(MAKE) -f controllers/joystick_drivers/ps3joy/CMakeFiles/sixpair.dir/build.make controllers/joystick_drivers/ps3joy/CMakeFiles/sixpair.dir/build
-.PHONY : sixpair/fast
-
-#=============================================================================
 # Target rules for targets named rosserial_msgs_gencpp
 
 # Build rule for target.
@@ -1052,7 +1039,6 @@ help:
 	@echo "... sensor_msgs_generate_messages_lisp"
 	@echo "... sensor_msgs_generate_messages_py"
 	@echo "... _catkin_empty_exported_target"
-	@echo "... sixpair"
 	@echo "... rosserial_msgs_gencpp"
 	@echo "... rosserial_msgs_generate_messages"
 	@echo "... rosserial_msgs_generate_messages_cpp"

@@ -44,7 +44,6 @@
 /home/fcs_basestation/catkin_ws/src/flexcraft/build/controllers/joystick_drivers/joy/CMakeFiles/sensor_msgs_generate_messages_cpp.dir
 /home/fcs_basestation/catkin_ws/src/flexcraft/build/controllers/joystick_drivers/joy/CMakeFiles/sensor_msgs_generate_messages_lisp.dir
 /home/fcs_basestation/catkin_ws/src/flexcraft/build/controllers/joystick_drivers/joy/CMakeFiles/sensor_msgs_generate_messages_py.dir
-/home/fcs_basestation/catkin_ws/src/flexcraft/build/controllers/joystick_drivers/ps3joy/CMakeFiles/sixpair.dir
 /home/fcs_basestation/catkin_ws/src/flexcraft/build/controllers/joystick_drivers/spacenav_node/CMakeFiles/spacenav_node.dir
 /home/fcs_basestation/catkin_ws/src/flexcraft/build/flexcraft_msgs/CMakeFiles/std_msgs_generate_messages_cpp.dir
 /home/fcs_basestation/catkin_ws/src/flexcraft/build/flexcraft_msgs/CMakeFiles/std_msgs_generate_messages_lisp.dir
