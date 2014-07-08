@@ -16,22 +16,14 @@ ros::NodeHandle  nh;
 void messageCb(const flexcraft_msgs::thrusters8& msg)
 { unsigned char thruster_control = msg.thrusters;
 
-  if (thruster_control & msg.RFF)
-    digitalWrite(6, HIGH);
-  if (thruster_control & msg.RFS)
-    digitalWrite(7, HIGH);
-  if (thruster_control & msg.RRS)
-    digitalWrite(8, HIGH);
-  if (thruster_control & msg.RRR)
-    digitalWrite(9, HIGH);
-  if (thruster_control & msg.LRR)
-    digitalWrite(10, HIGH);
-  if (thruster_control & msg.LRS)
-    digitalWrite(11, HIGH);
-  if (thruster_control & msg.LFS)
-    digitalWrite(12, HIGH);
-  if (thruster_control & msg.LFF)
-    digitalWrite(13, HIGH);
+  digitalWrite(6, thruster_control & msg.RFF);
+  digitalWrite(7, thruster_control & msg.RFS);
+  digitalWrite(8, thruster_control & msg.RRS);
+  digitalWrite(9, thruster_control & msg.RRR);
+  digitalWrite(10, thruster_control & msg.LRR);
+  digitalWrite(11, thruster_control & msg.LRS);
+  digitalWrite(12, thruster_control & msg.LFS);
+  digitalWrite(13, thruster_control & msg.LFF);
 
 /*  //OFF
   delay(2000);
