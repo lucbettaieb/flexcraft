@@ -1,0 +1,12 @@
+<launch>
+    <rosparam ns="mr_teleoperator">
+      output_topics:
+        - /flexcraft/cmd_vel
+    </rosparam>
+    
+    <node name="joystick_teleoperator" pkg="mr_tools" type="joystick_teleoperator" output="screen">
+        <param name="dev" value="/dev/input/js0" />
+    </node>
+
+    <node name="rqt" pkg="rqt_gui" type="rqt_gui" output="screen" />
+</launch>
