@@ -17,7 +17,7 @@ catkin_make
 source flexcraft/devel/setup.bash
 ```
 
-Note on thruster naming conventions:
+<h4>Note on thruster naming conventions:</h4>
 side (Left/Right) - side (front/rear) - direction it makes the craft go (backwards/forwards/right/left)
 ```
  1 ^ -------------- ^ 3
