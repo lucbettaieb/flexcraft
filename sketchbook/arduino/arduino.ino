@@ -38,7 +38,7 @@ void messageCb(const flexcraft_msgs::thrusters8& msg)
   delay(500);*/
 }
 
-ros::Subscriber<flexcraft_msgs::thrusters8> sub("cmd_low", &messageCb );
+ros::Subscriber<flexcraft_msgs::thrusters8> sub("low_cmd", &messageCb );
 
 void setup()
 { pinMode(6, OUTPUT);
