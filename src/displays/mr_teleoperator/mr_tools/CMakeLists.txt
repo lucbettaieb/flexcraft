@@ -22,11 +22,12 @@ include_directories(
 
 #add_executable(velocity_dispatcher src/VelocityDispatcher.cpp)
 add_executable(joystick_teleoperator src/Joystick.cpp)
-add_executable(ui_translator src/ui_translator.cpp)
 
 #target_link_libraries(velocity_dispatcher ${catkin_LIBRARIES})
 target_link_libraries(joystick_teleoperator ${catkin_LIBRARIES})
-target_link_libraries(ui_translator ${catkin_LIBRARIES})
+
+#target_link_libraries(ui_translator ${catkin_LIBRARIES})
+#add_executable(ui_translator src/ui_translator.cpp)
 
 #############
 ## Install ##

@@ -171,3 +171,7 @@ target_link_libraries(translate ${catkin_LIBRARIES})
 
 add_executable(twist src/twist_translator.cpp)
 target_link_libraries(twist ${catkin_LIBRARIES})
+
+add_executable(ui_translator src/ui_translator.cpp)
+target_link_libraries(ui_translator ${catkin_LIBRARIES})
+
