@@ -34,12 +34,12 @@ static const char GETSTATUS[] = "robot_pose_ekf/GetStatus";
   class GetStatusResponse : public ros::Msg
   {
     public:
-      const char* status;
+      char * status;
 
     virtual int serialize(unsigned char *outbuffer) const
     {
       int offset = 0;
-      uint32_t length_status = strlen(this->status);
+      uint32_t length_status = strlen( (const char*) this->status);
       memcpy(outbuffer + offset, &length_status, sizeof(uint32_t));
       offset += 4;
       memcpy(outbuffer + offset, this->status, length_status);
