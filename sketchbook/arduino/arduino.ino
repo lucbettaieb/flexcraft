@@ -13,6 +13,10 @@
 
 ros::NodeHandle  nh;
 
+const int timeout = 10000;  //timeout is used to ensure not using outdated commands
+                            //10000 is chosen for being long enough through slight empirical studies, not necessarily a great value
+int timeout_counter;        //timout_counter is used to track 'time' against timeout
+
 void messageCb(const flexcraft_msgs::thrusters8& msg)
 { unsigned char thruster_control = msg.thrusters;
 
@@ -24,6 +28,9 @@ void messageCb(const flexcraft_msgs::thrusters8& msg)
   digitalWrite(11, thruster_control & msg.LRS);
   digitalWrite(12, thruster_control & msg.LFS);
   digitalWrite(13, thruster_control & msg.LFF);
+  
+  //new command, reset timeout_counter
+  timeout_counter = 0;
 
 /*  //OFF
   delay(2000);
@@ -51,11 +58,27 @@ void setup()
   pinMode(13, OUTPUT);
   nh.initNode();
   nh.subscribe(sub);
+  
+  timeout_counter = 0;
 }
 
 void loop()
 {
+  if(timeout_counter > timeout)
+  {
+    digitalWrite(6, LOW);
+    digitalWrite(7, LOW);
+    digitalWrite(8, LOW);
+    digitalWrite(9, LOW);
+    digitalWrite(10, LOW);
+    digitalWrite(11, LOW);
+    digitalWrite(12, LOW);
+    digitalWrite(13, LOW);
+  }
+  
   nh.spinOnce();
 //  delay(1000);
+
+  timeout_counter++;
 }
 
