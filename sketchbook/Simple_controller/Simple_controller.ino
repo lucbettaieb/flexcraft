@@ -27,6 +27,7 @@ void setup(){
     cmd_msg.deltaVX = 0;
     cmd_msg.deltaVY = 0;
     cmd_msg.alpha = 0;
+    cmd_msg.seq = 0;
 }
 
 void loop(){
@@ -77,6 +78,8 @@ void loop(){
   }
   
   controller_pub.publish(&cmd_msg);
+  
+  cmd_msg.seq++;
 
   nh.spinOnce();
   delay(10);        // delay in between reads for stabil  ity

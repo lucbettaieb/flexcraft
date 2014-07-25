@@ -14,9 +14,9 @@ namespace diagnostic_msgs
   {
     public:
       int8_t level;
-      const char* name;
-      const char* message;
-      const char* hardware_id;
+      char * name;
+      char * message;
+      char * hardware_id;
       uint8_t values_length;
       diagnostic_msgs::KeyValue st_values;
       diagnostic_msgs::KeyValue * values;
@@ -34,17 +34,17 @@ namespace diagnostic_msgs
       u_level.real = this->level;
       *(outbuffer + offset + 0) = (u_level.base >> (8 * 0)) & 0xFF;
       offset += sizeof(this->level);
-      uint32_t length_name = strlen(this->name);
+      uint32_t length_name = strlen( (const char*) this->name);
       memcpy(outbuffer + offset, &length_name, sizeof(uint32_t));
       offset += 4;
       memcpy(outbuffer + offset, this->name, length_name);
       offset += length_name;
-      uint32_t length_message = strlen(this->message);
+      uint32_t length_message = strlen( (const char*) this->message);
       memcpy(outbuffer + offset, &length_message, sizeof(uint32_t));
       offset += 4;
       memcpy(outbuffer + offset, this->message, length_message);
       offset += length_message;
-      uint32_t length_hardware_id = strlen(this->hardware_id);
+      uint32_t length_hardware_id = strlen( (const char*) this->hardware_id);
       memcpy(outbuffer + offset, &length_hardware_id, sizeof(uint32_t));
       offset += 4;
       memcpy(outbuffer + offset, this->hardware_id, length_hardware_id);

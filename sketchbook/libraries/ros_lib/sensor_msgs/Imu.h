@@ -28,6 +28,7 @@ namespace sensor_msgs
       int offset = 0;
       offset += this->header.serialize(outbuffer + offset);
       offset += this->orientation.serialize(outbuffer + offset);
+      unsigned char * orientation_covariance_val = (unsigned char *) this->orientation_covariance;
       for( uint8_t i = 0; i < 9; i++){
       int32_t * val_orientation_covariancei = (int32_t *) &(this->orientation_covariance[i]);
       int32_t exp_orientation_covariancei = (((*val_orientation_covariancei)>>23)&255);
@@ -45,6 +46,7 @@ namespace sensor_msgs
       if(this->orientation_covariance[i] < 0) *(outbuffer + offset -1) |= 0x80;
       }
       offset += this->angular_velocity.serialize(outbuffer + offset);
+      unsigned char * angular_velocity_covariance_val = (unsigned char *) this->angular_velocity_covariance;
       for( uint8_t i = 0; i < 9; i++){
       int32_t * val_angular_velocity_covariancei = (int32_t *) &(this->angular_velocity_covariance[i]);
       int32_t exp_angular_velocity_covariancei = (((*val_angular_velocity_covariancei)>>23)&255);
@@ -62,6 +64,7 @@ namespace sensor_msgs
       if(this->angular_velocity_covariance[i] < 0) *(outbuffer + offset -1) |= 0x80;
       }
       offset += this->linear_acceleration.serialize(outbuffer + offset);
+      unsigned char * linear_acceleration_covariance_val = (unsigned char *) this->linear_acceleration_covariance;
       for( uint8_t i = 0; i < 9; i++){
       int32_t * val_linear_acceleration_covariancei = (int32_t *) &(this->linear_acceleration_covariance[i]);
       int32_t exp_linear_acceleration_covariancei = (((*val_linear_acceleration_covariancei)>>23)&255);
@@ -86,6 +89,7 @@ namespace sensor_msgs
       int offset = 0;
       offset += this->header.deserialize(inbuffer + offset);
       offset += this->orientation.deserialize(inbuffer + offset);
+      uint8_t * orientation_covariance_val = (uint8_t*) this->orientation_covariance;
       for( uint8_t i = 0; i < 9; i++){
       uint32_t * val_orientation_covariancei = (uint32_t*) &(this->orientation_covariance[i]);
       offset += 3;
@@ -100,6 +104,7 @@ namespace sensor_msgs
       if( ((*(inbuffer+offset++)) & 0x80) > 0) this->orientation_covariance[i] = -this->orientation_covariance[i];
       }
       offset += this->angular_velocity.deserialize(inbuffer + offset);
+      uint8_t * angular_velocity_covariance_val = (uint8_t*) this->angular_velocity_covariance;
       for( uint8_t i = 0; i < 9; i++){
       uint32_t * val_angular_velocity_covariancei = (uint32_t*) &(this->angular_velocity_covariance[i]);
       offset += 3;
@@ -114,6 +119,7 @@ namespace sensor_msgs
       if( ((*(inbuffer+offset++)) & 0x80) > 0) this->angular_velocity_covariance[i] = -this->angular_velocity_covariance[i];
       }
       offset += this->linear_acceleration.deserialize(inbuffer + offset);
+      uint8_t * linear_acceleration_covariance_val = (uint8_t*) this->linear_acceleration_covariance;
       for( uint8_t i = 0; i < 9; i++){
       uint32_t * val_linear_acceleration_covariancei = (uint32_t*) &(this->linear_acceleration_covariance[i]);
       offset += 3;

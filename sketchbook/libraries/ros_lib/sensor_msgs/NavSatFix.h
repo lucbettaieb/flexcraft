@@ -73,6 +73,7 @@ namespace sensor_msgs
       *(outbuffer + offset++) = ((exp_altitude<<4) & 0xF0) | ((sig_altitude>>19)&0x0F);
       *(outbuffer + offset++) = (exp_altitude>>4) & 0x7F;
       if(this->altitude < 0) *(outbuffer + offset -1) |= 0x80;
+      unsigned char * position_covariance_val = (unsigned char *) this->position_covariance;
       for( uint8_t i = 0; i < 9; i++){
       int32_t * val_position_covariancei = (int32_t *) &(this->position_covariance[i]);
       int32_t exp_position_covariancei = (((*val_position_covariancei)>>23)&255);
@@ -132,6 +133,7 @@ namespace sensor_msgs
       if(exp_altitude !=0)
         *val_altitude |= ((exp_altitude)-1023+127)<<23;
       if( ((*(inbuffer+offset++)) & 0x80) > 0) this->altitude = -this->altitude;
+      uint8_t * position_covariance_val = (uint8_t*) this->position_covariance;
       for( uint8_t i = 0; i < 9; i++){
       uint32_t * val_position_covariancei = (uint32_t*) &(this->position_covariance[i]);
       offset += 3;

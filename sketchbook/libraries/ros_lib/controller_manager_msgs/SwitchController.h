@@ -31,7 +31,7 @@ static const char SWITCHCONTROLLER[] = "controller_manager_msgs/SwitchController
       *(outbuffer + offset++) = 0;
       *(outbuffer + offset++) = 0;
       for( uint8_t i = 0; i < start_controllers_length; i++){
-      uint32_t length_start_controllersi = strlen(this->start_controllers[i]);
+      uint32_t length_start_controllersi = strlen( (const char*) this->start_controllers[i]);
       memcpy(outbuffer + offset, &length_start_controllersi, sizeof(uint32_t));
       offset += 4;
       memcpy(outbuffer + offset, this->start_controllers[i], length_start_controllersi);
@@ -42,7 +42,7 @@ static const char SWITCHCONTROLLER[] = "controller_manager_msgs/SwitchController
       *(outbuffer + offset++) = 0;
       *(outbuffer + offset++) = 0;
       for( uint8_t i = 0; i < stop_controllers_length; i++){
-      uint32_t length_stop_controllersi = strlen(this->stop_controllers[i]);
+      uint32_t length_stop_controllersi = strlen( (const char*) this->stop_controllers[i]);
       memcpy(outbuffer + offset, &length_stop_controllersi, sizeof(uint32_t));
       offset += 4;
       memcpy(outbuffer + offset, this->stop_controllers[i], length_stop_controllersi);

@@ -35,7 +35,7 @@ static const char SELFTEST[] = "diagnostic_msgs/SelfTest";
   class SelfTestResponse : public ros::Msg
   {
     public:
-      const char* id;
+      char * id;
       int8_t passed;
       uint8_t status_length;
       diagnostic_msgs::DiagnosticStatus st_status;
@@ -44,7 +44,7 @@ static const char SELFTEST[] = "diagnostic_msgs/SelfTest";
     virtual int serialize(unsigned char *outbuffer) const
     {
       int offset = 0;
-      uint32_t length_id = strlen(this->id);
+      uint32_t length_id = strlen( (const char*) this->id);
       memcpy(outbuffer + offset, &length_id, sizeof(uint32_t));
       offset += 4;
       memcpy(outbuffer + offset, this->id, length_id);

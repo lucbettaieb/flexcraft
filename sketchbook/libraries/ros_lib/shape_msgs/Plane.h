@@ -17,6 +17,7 @@ namespace shape_msgs
     virtual int serialize(unsigned char *outbuffer) const
     {
       int offset = 0;
+      unsigned char * coef_val = (unsigned char *) this->coef;
       for( uint8_t i = 0; i < 4; i++){
       int32_t * val_coefi = (int32_t *) &(this->coef[i]);
       int32_t exp_coefi = (((*val_coefi)>>23)&255);
@@ -39,6 +40,7 @@ namespace shape_msgs
     virtual int deserialize(unsigned char *inbuffer)
     {
       int offset = 0;
+      uint8_t * coef_val = (uint8_t*) this->coef;
       for( uint8_t i = 0; i < 4; i++){
       uint32_t * val_coefi = (uint32_t*) &(this->coef[i]);
       offset += 3;

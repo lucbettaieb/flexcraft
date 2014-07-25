@@ -17,7 +17,7 @@ namespace sensor_msgs
       std_msgs::Header header;
       uint32_t height;
       uint32_t width;
-      const char* distortion_model;
+      char * distortion_model;
       uint8_t D_length;
       float st_D;
       float * D;
@@ -42,7 +42,7 @@ namespace sensor_msgs
       *(outbuffer + offset + 2) = (this->width >> (8 * 2)) & 0xFF;
       *(outbuffer + offset + 3) = (this->width >> (8 * 3)) & 0xFF;
       offset += sizeof(this->width);
-      uint32_t length_distortion_model = strlen(this->distortion_model);
+      uint32_t length_distortion_model = strlen( (const char*) this->distortion_model);
       memcpy(outbuffer + offset, &length_distortion_model, sizeof(uint32_t));
       offset += 4;
       memcpy(outbuffer + offset, this->distortion_model, length_distortion_model);
@@ -67,6 +67,7 @@ namespace sensor_msgs
       *(outbuffer + offset++) = (exp_Di>>4) & 0x7F;
       if(this->D[i] < 0) *(outbuffer + offset -1) |= 0x80;
       }
+      unsigned char * K_val = (unsigned char *) this->K;
       for( uint8_t i = 0; i < 9; i++){
       int32_t * val_Ki = (int32_t *) &(this->K[i]);
       int32_t exp_Ki = (((*val_Ki)>>23)&255);
@@ -83,6 +84,7 @@ namespace sensor_msgs
       *(outbuffer + offset++) = (exp_Ki>>4) & 0x7F;
       if(this->K[i] < 0) *(outbuffer + offset -1) |= 0x80;
       }
+      unsigned char * R_val = (unsigned char *) this->R;
       for( uint8_t i = 0; i < 9; i++){
       int32_t * val_Ri = (int32_t *) &(this->R[i]);
       int32_t exp_Ri = (((*val_Ri)>>23)&255);
@@ -99,6 +101,7 @@ namespace sensor_msgs
       *(outbuffer + offset++) = (exp_Ri>>4) & 0x7F;
       if(this->R[i] < 0) *(outbuffer + offset -1) |= 0x80;
       }
+      unsigned char * P_val = (unsigned char *) this->P;
       for( uint8_t i = 0; i < 12; i++){
       int32_t * val_Pi = (int32_t *) &(this->P[i]);
       int32_t exp_Pi = (((*val_Pi)>>23)&255);
@@ -171,6 +174,7 @@ namespace sensor_msgs
       if( ((*(inbuffer+offset++)) & 0x80) > 0) this->st_D = -this->st_D;
         memcpy( &(this->D[i]), &(this->st_D), sizeof(float));
       }
+      uint8_t * K_val = (uint8_t*) this->K;
       for( uint8_t i = 0; i < 9; i++){
       uint32_t * val_Ki = (uint32_t*) &(this->K[i]);
       offset += 3;
@@ -184,6 +188,7 @@ namespace sensor_msgs
         *val_Ki |= ((exp_Ki)-1023+127)<<23;
       if( ((*(inbuffer+offset++)) & 0x80) > 0) this->K[i] = -this->K[i];
       }
+      uint8_t * R_val = (uint8_t*) this->R;
       for( uint8_t i = 0; i < 9; i++){
       uint32_t * val_Ri = (uint32_t*) &(this->R[i]);
       offset += 3;
@@ -197,6 +202,7 @@ namespace sensor_msgs
         *val_Ri |= ((exp_Ri)-1023+127)<<23;
       if( ((*(inbuffer+offset++)) & 0x80) > 0) this->R[i] = -this->R[i];
       }
+      uint8_t * P_val = (uint8_t*) this->P;
       for( uint8_t i = 0; i < 12; i++){
       uint32_t * val_Pi = (uint32_t*) &(this->P[i]);
       offset += 3;

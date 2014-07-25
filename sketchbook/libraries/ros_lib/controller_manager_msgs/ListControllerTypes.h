@@ -49,7 +49,7 @@ static const char LISTCONTROLLERTYPES[] = "controller_manager_msgs/ListControlle
       *(outbuffer + offset++) = 0;
       *(outbuffer + offset++) = 0;
       for( uint8_t i = 0; i < types_length; i++){
-      uint32_t length_typesi = strlen(this->types[i]);
+      uint32_t length_typesi = strlen( (const char*) this->types[i]);
       memcpy(outbuffer + offset, &length_typesi, sizeof(uint32_t));
       offset += 4;
       memcpy(outbuffer + offset, this->types[i], length_typesi);
@@ -60,7 +60,7 @@ static const char LISTCONTROLLERTYPES[] = "controller_manager_msgs/ListControlle
       *(outbuffer + offset++) = 0;
       *(outbuffer + offset++) = 0;
       for( uint8_t i = 0; i < base_classes_length; i++){
-      uint32_t length_base_classesi = strlen(this->base_classes[i]);
+      uint32_t length_base_classesi = strlen( (const char*) this->base_classes[i]);
       memcpy(outbuffer + offset, &length_base_classesi, sizeof(uint32_t));
       offset += 4;
       memcpy(outbuffer + offset, this->base_classes[i], length_base_classesi);

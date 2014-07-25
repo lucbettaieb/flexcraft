@@ -20,6 +20,7 @@ namespace geometry_msgs
     {
       int offset = 0;
       offset += this->twist.serialize(outbuffer + offset);
+      unsigned char * covariance_val = (unsigned char *) this->covariance;
       for( uint8_t i = 0; i < 36; i++){
       int32_t * val_covariancei = (int32_t *) &(this->covariance[i]);
       int32_t exp_covariancei = (((*val_covariancei)>>23)&255);
@@ -43,6 +44,7 @@ namespace geometry_msgs
     {
       int offset = 0;
       offset += this->twist.deserialize(inbuffer + offset);
+      uint8_t * covariance_val = (uint8_t*) this->covariance;
       for( uint8_t i = 0; i < 36; i++){
       uint32_t * val_covariancei = (uint32_t*) &(this->covariance[i]);
       offset += 3;
