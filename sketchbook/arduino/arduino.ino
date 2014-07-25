@@ -1,11 +1,11 @@
-const char RFB=6;
-const char RFL=7;
+const char RFB=4;
+const char RFL=5;
 const char RRL=8;
 const char RRF=9;
-const char LRF=10;
-const char LRR=11;
-const char LFR=12;
-const char LFB=13;
+const char LRF=7;
+const char LRR=6;
+const char LFR=3;
+const char LFB=2;
 
 #include <ros.h>
 #include <std_msgs/UInt8.h>
