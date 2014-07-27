@@ -1,7 +1,7 @@
 #include "ros/ros.h"
 #include "flexcraft_msgs/deltaV2D.h"
 #include <termios.h> //needed for non-blocking input
-
+//this is a test
 //This function creates a non-blocking character input
 // answers.ros.org/question/63491/keyboard-key-pressed/
 int getch() {
