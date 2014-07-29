@@ -161,21 +161,22 @@ include_directories(
 # catkin_add_nosetests(test)
 
 
-add_executable(fcs src/fcs.cpp)
-target_link_libraries(fcs ${catkin_LIBRARIES})
-
 add_executable(fcs_model src/fcs_model.cpp)
 target_link_libraries(fcs_model ${catkin_LIBRARIES})
-
-add_executable(fcs21 src/fcs21.cpp)
-target_link_libraries(fcs21 ${catkin_LIBRARIES})
 
 add_executable(odom_publisher src/odom_publisher.cpp)
 target_link_libraries(odom_publisher ${catkin_LIBRARIES})
 
-add_executable(fcs3 src/fcs3.cpp)
-target_link_libraries(fcs3 ${catkin_LIBRARIES})
-
 add_executable(kinect_to_base src/kinect_to_base.cpp)
 target_link_libraries(kinect_to_base ${catkin_LIBRARIES})
+
+
+add_executable(prototype1 src/prototype1.cpp)
+target_link_libraries(prototype1 ${catkin_LIBRARIES})
+
+add_executable(prototype2 src/prototype2.cpp)
+target_link_libraries(prototype2 ${catkin_LIBRARIES})
+
+add_executable(prototype3 src/prototype3.cpp)
+target_link_libraries(prototype3 ${catkin_LIBRARIES})
 
