@@ -16,11 +16,10 @@ int main(int argc, char** argv)
 
   int_marker.header.frame_id = "/base_link";
   int_marker.name = "my_marker";
-  int_marker.description = "Simple 1-DOF Control";
+  int_marker.description = "FlexCraft Simulator";
 
-  // create a grey box marker
+  //create a robot marker
   visualization_msgs::Marker box_marker;
-//  box_marker.type = visualization_msgs::Marker::CUBE;
   box_marker.type = visualization_msgs::Marker::MESH_RESOURCE;
   box_marker.mesh_resource = "file:///home/fcs_basestation/catkin_ws/src/flexcraft/src/displays/using_markers/meshes/flexcraft.dae";
 
@@ -44,13 +43,59 @@ int main(int argc, char** argv)
   // create a control which will move the box
   // this control does not contain any markers,
   // which will cause RViz to insert two arrows
-  visualization_msgs::InteractiveMarkerControl rotate_control;
-  rotate_control.name = "move_x";
-  rotate_control.interaction_mode =
-      visualization_msgs::InteractiveMarkerControl::MOVE_AXIS;
+  visualization_msgs::InteractiveMarkerControl control;
+  
+
+
+     control.orientation.w = 1;
+     control.orientation.x = 1;
+     control.orientation.y = 0;
+     control.orientation.z = 0;
+//     control.name = "rotate_x";
+//     control.interaction_mode = visualization_msgs::InteractiveMarkerControl::ROTATE_AXIS;
+//     int_marker.controls.push_back(control);
+     control.name = "move_x";
+     control.interaction_mode = visualization_msgs::InteractiveMarkerControl::MOVE_AXIS;
+     int_marker.controls.push_back(control);
+ 
+   control.orientation.w = 1;
+     control.orientation.x = 0;
+     control.orientation.y = 1;
+     control.orientation.z = 0;
+     control.name = "rotate_z";
+     control.interaction_mode = visualization_msgs::InteractiveMarkerControl::ROTATE_AXIS;
+     int_marker.controls.push_back(control);
+
+//     control.name = "move_z";
+//     control.interaction_mode = visualization_msgs::InteractiveMarkerControl::MOVE_AXIS;
+//     int_marker.controls.push_back(control);
+ 
+     control.orientation.w = 1;
+     control.orientation.x = 0;
+     control.orientation.y = 0;
+     control.orientation.z = 1;
+//     control.name = "rotate_y";
+//     control.interaction_mode = visualization_msgs::InteractiveMarkerControl::ROTATE_AXIS;
+//     int_marker.controls.push_back(control);
+     control.name = "move_y";
+     control.interaction_mode = visualization_msgs::InteractiveMarkerControl::MOVE_AXIS;
+     int_marker.controls.push_back(control);
+  
+
+
+
+
+
+
+
+  //rotate_control.name = "rotate_3D";
+  //rotate_control.orientation.x = 2;
+
+  //rotate_control.interaction_mode =
+    //  visualization_msgs::InteractiveMarkerControl::MOVE_ROTATE_3D;
 
   // add the control to the interactive marker
-  int_marker.controls.push_back(rotate_control);
+  //int_marker.controls.push_back(rotate_control);
 
   // add the interactive marker to our collection &
   // tell the server to call processFeedback() when feedback arrives for it

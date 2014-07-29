@@ -164,15 +164,18 @@ include_directories(
 add_executable(fcs src/fcs.cpp)
 target_link_libraries(fcs ${catkin_LIBRARIES})
 
-add_executable(fcs2 src/fcs2.cpp)
-target_link_libraries(fcs2 ${catkin_LIBRARIES})
+add_executable(fcs_model src/fcs_model.cpp)
+target_link_libraries(fcs_model ${catkin_LIBRARIES})
 
 add_executable(fcs21 src/fcs21.cpp)
 target_link_libraries(fcs21 ${catkin_LIBRARIES})
 
-add_executable(fcs22 src/fcs22.cpp)
-target_link_libraries(fcs22 ${catkin_LIBRARIES})
+add_executable(odom_publisher src/odom_publisher.cpp)
+target_link_libraries(odom_publisher ${catkin_LIBRARIES})
 
 add_executable(fcs3 src/fcs3.cpp)
 target_link_libraries(fcs3 ${catkin_LIBRARIES})
+
+add_executable(kinect_to_base src/kinect_to_base.cpp)
+target_link_libraries(kinect_to_base ${catkin_LIBRARIES})
 
