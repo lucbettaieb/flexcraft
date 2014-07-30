@@ -21,7 +21,8 @@ int main(int argc, char** argv)
   //create a robot marker
   visualization_msgs::Marker box_marker;
   box_marker.type = visualization_msgs::Marker::MESH_RESOURCE;
-  box_marker.mesh_resource = "file:///home/fcs_basestation/catkin_ws/src/flexcraft/src/displays/using_markers/meshes/flexcraft.dae";
+  //box_marker.mesh_resource = "file:///home/fcs_basestation/catkin_ws/src/flexcraft/src/displays/using_markers/meshes/flexcraft.dae";
+  box_marker.mesh_resource = "package://using_markers/meshes/flexcraft.dae";
 
 
   box_marker.scale.x = 0.45;
