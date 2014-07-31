@@ -29,8 +29,8 @@ float multi;
 
 //variables to hold the timer/ designate how long each loop should take
 int timer;
-int time_step = 50;
-float dt = 0.05;
+int time_step = 500;
+float dt = 0.5;
 
 void setup(){
   //Start the node
@@ -39,8 +39,8 @@ void setup(){
   
   //Start sensor interfacing
   Wire.begin();
-//  Serial.begin(9600);
-  //Serial.print("Initializing sensor...");
+  // Serial.begin(9600);
+  // Serial.print("Initializing sensor...");
   accelgyro.initialize();
   //Serial.println("Complete!");
   
@@ -58,6 +58,10 @@ void setup(){
   gyrobias = ratecounter /100.0;
 }
 
+
+float prev_accelx = 0.0;
+float prev_accely = 0.0;
+
 void loop(){
   //This is used to make every loop take the same amount of time
   timer = millis();
@@ -69,14 +73,17 @@ void loop(){
   accelx_imu = ((float(ax) - xbias)* 0.000599);
   accely_imu = ((float(ay) - ybias)* 0.000599);
   
+  accelx_imu -= prev_accelx;
+  accely_imu -= prev_accely;
+ 
   //Assume that we will never have accelerations this low - 500 kg flexcraft (highballed), 10 N thruster (lowballed) means 0.02 m/s^2. readings below that are zero'd
-  if(accelx_imu < 0.01){
+  if(accelx_imu < 0.1){
     accelx_imu = 0;
   }
-  if(accely_imu < 0.01){
+  if(accely_imu < 0.1){
     accely_imu = 0;
   }
-  
+
   //convert rate into degrees per second
   angRate = (float(gz) - gyrobias)/131.0;
   
@@ -106,6 +113,11 @@ void loop(){
   //Integrate the absolute accelerations to find the absolute velocities
   velx = velx + (accelx_in * dt);
   vely = vely + (accely_in * dt);
+
+  prev_accelx = accelx_imu;
+  prev_accely = accely_imu;
+
+
   
   //prepare the message with velocities, angular rate
   IMU_data.linear.x = velx;
