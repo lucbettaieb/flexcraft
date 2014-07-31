@@ -25,7 +25,7 @@ int main(int argc, char** argv){
 
   ros::NodeHandle n;
 
-  ros::Subscriber imu_sub = n.subscribe("imu_twist", 1, imuCallback);
+  ros::Subscriber imu_sub = n.subscribe("IMU_data", 1, imuCallback);
 
   ros::Publisher odom_pub = n.advertise<nav_msgs::Odometry>("odom", 50);
   tf::TransformBroadcaster odom_broadcaster;

@@ -4,6 +4,9 @@
         <node name="c3po" pkg="basic_translator" type="translate" respawn="true" />
         <node name="ui_translator" pkg="basic_translator" type="ui_translator" respawn="true" />
 
+        <node name="odom_publisher" pkg="using_markers" type="odom_publisher" respawn="true" />
+        <node name="fcs_model" pkg="using_markers" type="fcs_model" respawn="true" />
+
         <node name="slave" pkg="rosserial_python" type="serial_node.py" respawn="false">
                 <param name="~port" value="/dev/ttyACM0" />
 
