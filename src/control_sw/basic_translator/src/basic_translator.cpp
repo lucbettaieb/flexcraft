@@ -56,10 +56,13 @@ int main(int argc, char **argv) {
 
 	ros::NodeHandle nh;
 
+	int rate;  //publishing rate
+	ros::param::param<int>("~rate", rate, 10);
 	ros::Subscriber translator_sub = nh.subscribe("mid_cmd", 1, deltaVCallback);
 	ros::Publisher translator_pub = nh.advertise<flexcraft_msgs::thrusters8>("low_cmd", 1);
 
-	ros::Rate loop_rate(10);
+
+	ros::Rate loop_rate(rate);
 
 	ROS_INFO("Hello, I am C-3PO, human cyborg relations. How might I serve you?");
 

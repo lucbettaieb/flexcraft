@@ -1,8 +1,10 @@
 <launch>
+	<arg name="thruster_port" default="/dev/ttyACM0" />
+
 	<node name="c3po" pkg="basic_translator" type="basic_translator" respawn="true" />
 	<node name="hal9000" pkg="fcs_keyboard" type="aswd" respawn="true" output="screen"/>
 	<node name="slave" pkg="rosserial_python" type="serial_node.py" respawn="true">
-		<param name="~port" value="/dev/ttyACM0" />
+		<param name="~port" value="$(arg thruster_port)" />
 	</node>
 
 </launch>

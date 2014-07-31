@@ -23,7 +23,7 @@ void pos_to_vel(StarGazer::PositionData &pose_f, double velocity[], double pose_
 
 int main(int argc, char **argv) {
 	// Variables - should be parameters
-	int pub_freq = 100;
+	int pub_freq = 10;	//Documentation states StarGazer measurement time is 10times/sec
 	std::string port = "/dev/ttyUSB0";
 
 	// Initialize Ros
