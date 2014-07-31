@@ -109,6 +109,8 @@ void StarGazer::build_map( int no_markers, int ref_marker_id )
   while( true ) {
     std::string str = get_string();
 
+		std::cout << str << std::endl;
+
     std::clog << "\v";
 
     std::vector<PositionData> pds = parse_position_msg( str );
