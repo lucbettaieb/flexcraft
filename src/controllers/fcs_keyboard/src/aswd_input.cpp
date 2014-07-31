@@ -23,9 +23,12 @@ int main(int argc, char **argv) {
 
 	ros::NodeHandle nh;
 
+	int rate;
+	ros::param::param("~rate", rate, 100);
+
   ros::Publisher keyboard_pub = nh.advertise<flexcraft_msgs::deltaV2D>("mid_cmd", 1);
 
-	ros::Rate loop_rate(100);
+	ros::Rate loop_rate(rate);
 
 	ROS_INFO("Hello Dave");
 
