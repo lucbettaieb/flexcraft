@@ -64,8 +64,6 @@ int main(int argc, char **argv) {
 
 	ros::Rate loop_rate(rate);
 
-	ROS_INFO("RATE: %d \n", rate);
-
 	ROS_INFO("Hello, I am C-3PO, human cyborg relations. How might I serve you?");
 
 	int count = 0;
