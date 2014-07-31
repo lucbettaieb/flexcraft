@@ -115,6 +115,9 @@ add_library(StarGazer src/StarGazer.cpp src/serial_port.cpp)
 add_executable(stargazer_node src/stargazer_node.cpp)
 target_link_libraries(stargazer_node StarGazer ${catkin_LIBRARIES})
 
+add_executable(stargazer_map src/stargazer_map.cpp)
+target_link_libraries(stargazer_map StarGazer ${catkin_LIBRARIES})
+
 ## Declare a cpp executable
 # add_executable(stargazer_node src/stargazer_node.cpp)
 

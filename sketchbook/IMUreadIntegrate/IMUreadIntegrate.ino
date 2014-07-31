@@ -34,12 +34,12 @@ float dt = 0.05;
 
 void setup(){
   //Start the node
-  nh.advertise(IMU_pub);
   nh.initNode();
+  nh.advertise(IMU_pub);
   
   //Start sensor interfacing
   Wire.begin();
-  Serial.begin(9600);
+//  Serial.begin(9600);
   //Serial.print("Initializing sensor...");
   accelgyro.initialize();
   //Serial.println("Complete!");

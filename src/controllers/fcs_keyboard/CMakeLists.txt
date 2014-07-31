@@ -166,5 +166,5 @@ include_directories(
 
 include_directories(include ${catkin_LIBRARIES})
 
-add_executable(aswd src/aswd_input.cpp)
-target_link_libraries(aswd ${catkin_LIBRARIES})
+add_executable(aswd_input src/aswd_input.cpp)
+target_link_libraries(aswd_input ${catkin_LIBRARIES})

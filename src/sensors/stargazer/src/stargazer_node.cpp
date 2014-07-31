@@ -40,6 +40,7 @@ int main(int argc, char **argv) {
 	StarGazer sg(port);
 
   sg.write_parameter( "MarkMode", "Alone" );
+	sg.write_parameter( "HeightFix", "No" );
 
 	ROS_INFO("MarkType: %s", sg.read_parameter("MarkType").c_str());
 	ROS_INFO("IDNum: %s", sg.read_parameter("IDNum").c_str());
@@ -80,7 +81,7 @@ int main(int argc, char **argv) {
 			time_f = ros::Time::now().toSec();
 			pos_to_vel(pd, velocity, position_i, time_f-time_i);
 			time_i = time_f;
-			std::cout << "v_x: " << velocity[x_ind] << ", v_y: " << velocity[y_ind] << ", omega: " << velocity[angle_ind] << "\n";
+//			std::cout << "v_x: " << velocity[x_ind] << ", v_y: " << velocity[y_ind] << ", omega: " << velocity[angle_ind] << "\n";
 
 		}
 

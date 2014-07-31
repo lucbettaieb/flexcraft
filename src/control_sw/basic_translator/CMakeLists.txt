@@ -166,11 +166,11 @@ include_directories(
 
 include_directories(include ${catkin_INCLUDE_DIRS})
 
-add_executable(translate src/basic_translator.cpp)
-target_link_libraries(translate ${catkin_LIBRARIES})
+add_executable(basic_translator src/basic_translator.cpp)
+target_link_libraries(basic_translator ${catkin_LIBRARIES})
 
-add_executable(twist src/twist_translator.cpp)
-target_link_libraries(twist ${catkin_LIBRARIES})
+add_executable(twist_translator src/twist_translator.cpp)
+target_link_libraries(twist_translator ${catkin_LIBRARIES})
 
 add_executable(ui_translator src/ui_translator.cpp)
 target_link_libraries(ui_translator ${catkin_LIBRARIES})
