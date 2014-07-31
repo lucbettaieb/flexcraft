@@ -1,0 +1,8 @@
+<launch>
+	
+	<include file="$(find mr_tools)/launch/teleoperator.launch"/>
+
+	<node name="spacenav" pkg="spacenav_node" type="spacenav_node" respawn="true" />
+	<node name="hal9000" pkg="fcs_spacenav" type="spacenav" respawn="true" output="screen" />
+
+</launch>

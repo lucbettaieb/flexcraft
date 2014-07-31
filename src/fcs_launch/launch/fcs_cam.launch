@@ -1,0 +1,22 @@
+<launch>
+	<group ns="Freeman">
+		<node pkg="axis_camera" type="axis.py" name="Freeman" respawn="true">
+			<param name="hostname" value="128.158.21.89" />
+			<param name="password" value="FreemanSR" />
+		</node>
+	</group>
+
+	<group ns="Huey">
+		<node pkg="axis_camera" type="axis.py" name="Huey" respawn="true">
+			<param name="hostname" value="128.158.21.91" />
+			<param name="password" value="HueySR" />
+		</node>
+	</group>
+
+	<group ns="Louie">
+		<node pkg="axis_camera" type="axis.py" name="Louie" respawn="true">
+			<param name="hostname" value="128.158.21.92" />
+			<param name="password" value="LouieSR" />
+		</node>
+	</group>
+</launch>
