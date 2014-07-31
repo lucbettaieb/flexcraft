@@ -41,7 +41,7 @@ int main(int argc, char **argv)
 { ros::init(argc, argv, "ui_translator");
   ros::NodeHandle nh;
 
-  ros::Subscriber translator_sub = nh.subscribe("flexcraft/cmd_vel", 1, uiCallback);
+  ros::Subscriber translator_sub = nh.subscribe("flexcraft_ui_joystick/cmd_vel", 1, uiCallback);
   ros::Publisher translator_pub = nh.advertise<flexcraft_msgs::deltaV2D>("/mid_cmd", 1);
   ros::Rate loop_rate(4);
 
