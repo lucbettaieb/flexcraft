@@ -40,7 +40,7 @@ int main(int argc, char **argv) {
 	StarGazer sg(port);
 
   sg.write_parameter( "MarkMode", "Map" );
-	sg.write_parameter( "RefID", "160" );
+	sg.write_parameter( "RefID", "148" );
 
 	ROS_INFO("MarkType: %s", sg.read_parameter("MarkType").c_str());
 	ROS_INFO("IDNum: %s", sg.read_parameter("IDNum").c_str());
@@ -62,7 +62,7 @@ int main(int argc, char **argv) {
 
 	StarGazer::PositionData pd;
 
-	sg.build_map(2, 160);
+	sg.build_map(5, 148);
 
 	while(ros::ok()) {
 		pd = sg.get_position().back();
