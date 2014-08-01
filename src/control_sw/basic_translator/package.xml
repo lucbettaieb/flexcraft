@@ -2,7 +2,7 @@
 <package>
   <name>basic_translator</name>
   <version>0.0.0</version>
-  <description>The basic_translator package</description>
+  <description>The basic_translator package: This package contains code for directly translating commands between different message types. Currently this allows human input devices data to be translated to thruster commands for arduino.</description>
 
   <!-- One maintainer tag required, multiple allowed, one person per tag --> 
   <!-- Example:  -->
