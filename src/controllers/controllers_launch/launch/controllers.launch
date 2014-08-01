@@ -1,0 +1,13 @@
+<launch>
+	<arg name="spacenav" default="false" />
+	<arg name="keyboard" default="false" />
+
+	<group if="$(arg spacenav)">
+		<node name="spacenav" pkg="spacenav_node" type="spacenav_node" respawn="true" />
+		<node name="hal9000" pkg="fcs_spacenav" type="spacenav" respawn="true" />
+	</group>
+
+	<group if="$(arg keyboard)">
+		<node name="hal9000_k" pkg="fcs_keyboard" type="aswd_input" respawn="true" />
+	</group>
+</launch>

@@ -1,5 +1,12 @@
 <launch>
 
+        <!-- argument for allowing different ports -->
+        <arg name="thruster_port" default="/dev/ttyACM0" />
+
+        <!-- arguments for controllers launch file, allowing different controllers -->
+        <arg name="spacenav" default="false" />
+        <arg name="keyboard" default="false" />
+
 
         <!-- Launch UI Joystick and User Interface in RQT-->
         <!-- see mr_tools/launch/teleoperator.launch; may have to update xbox controller input (js0 or js1)-->
@@ -34,11 +41,18 @@
 
         <!-- Run rosserial, allowing ROS to send low level commands to Arduino, via USB -->
         <node name="slave" pkg="rosserial_python" type="serial_node.py" respawn="false">
-                <param name="~port" value="/dev/ttyACM0" />
+                <param name="~port" value="$(arg thruster_port)" />
 
 
 
         </node>
+
+        <!-- This allows the user to easily run the different controllers -->
+        <include file="$(find controllers_launch)/launch/controllers.launch">
+
+                <arg name="spacenav" value="$(arg spacenav)" />
+                <arg name="keyboard" value="$(arg keyboard)" />
+        </include>
 
 </launch>
 
