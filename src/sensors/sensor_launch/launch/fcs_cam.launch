@@ -16,12 +16,22 @@
 			<param name="hostname" value="128.158.21.91" />
 			<param name="password" value="HueySR" />
 		</node>
+
+		<node pkg="image_transport" type="republish" name="republish" args="compressed" respawn="true">
+			<remap from="/Huey/in" to="/Huey/image_raw" />
+			<remap from="/Huey/out" to="right_image" />
+		</node>
 	</group>
 
 	<group ns="Louie">
 		<node pkg="axis_camera" type="axis.py" name="Louie" respawn="true">
 			<param name="hostname" value="128.158.21.92" />
 			<param name="password" value="LouieSR" />
+		</node>
+	
+		<node pkg="image_transport" type="republish" name="republish" args="compressed" respawn="true">
+			<remap from="/Louie/in" to="/Louie/image_raw" />
+			<remap from="/Louie/out" to="back_image" />
 		</node>
 	</group>
 </launch>
