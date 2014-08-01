@@ -1,16 +1,42 @@
 <launch>
+
+
+        <!-- Launch UI Joystick and User Interface in RQT-->
+        <!-- see mr_tools/launch/teleoperator.launch; may have to update xbox controller input (js0 or js1)-->
+        <!-- for more info see http://wiki.ros.org/mr_teleoperator/Tutorials/Getting%20Started -->
         <include file="$(find mr_tools)/launch/teleoperator.launch"/>
 
+        <!-- Launch three onboard cameras, and republish to be UI viewable-->
+        <include file="$(find sensor_launch)/launch/fcs_cam.launch"/>
+
+        <!-- Launch kinect, and republish point_cloud to be RViz viewable-->
+        <include file="$(find sensor_launch)/launch/kinect.launch"/>
+
+        <!-- Run basic_translator/src/basic_translator.cpp-->
+        <!--   This converts mid level command from controller to low level arduino command-->
         <node name="c3po" pkg="basic_translator" type="translate" respawn="true" />
+
+        <!-- Run basic_translator/src/ui_translator.cpp-->
+        <!--   This converts mid level command from UI joystick to mid level command-->
         <node name="ui_translator" pkg="basic_translator" type="ui_translator" respawn="true" />
 
+
+        <!-- These three files run and publish visual representation of flexcraft in RViz-->
+        <!-- 1  Publish nav_msgs::odom message to FCS reprsentation in RViz-->
         <node name="odom_publisher" pkg="using_markers" type="odom_publisher" respawn="true" />
+
+        <!-- 2  Contains FCS .dae visual represntation-->
         <node name="fcs_model" pkg="using_markers" type="fcs_model" respawn="true" />
+        
+        <!-- 3  'TF' Coordinate frame transform between kinect and flexcraft IMU-->
         <node name="kinect_to_base" pkg="using_markers" type="kinect_to_base" respawn="true" />
 
 
+        <!-- Run rosserial, allowing ROS to send low level commands to Arduino, via USB -->
         <node name="slave" pkg="rosserial_python" type="serial_node.py" respawn="false">
                 <param name="~port" value="/dev/ttyACM0" />
+
+
 
         </node>
 
