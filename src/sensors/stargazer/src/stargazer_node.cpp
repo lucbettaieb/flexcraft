@@ -39,8 +39,8 @@ int main(int argc, char **argv) {
 	// Initialize StarGazer;
 	StarGazer sg(port);
 
-  sg.write_parameter( "MarkMode", "Alone" );
-	sg.write_parameter( "HeightFix", "No" );
+//  sg.write_parameter( "MarkMode", "Map" );
+//	sg.write_parameter( "HeightFix", "No" );
 
 	ROS_INFO("MarkType: %s", sg.read_parameter("MarkType").c_str());
 	ROS_INFO("IDNum: %s", sg.read_parameter("IDNum").c_str());
