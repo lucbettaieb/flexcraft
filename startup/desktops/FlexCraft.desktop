@@ -1,0 +1,9 @@
+[Desktop Entry]
+Version=1.0
+Name=FCS Onboard
+GenericName=Application
+Exec=/home/fcs_main/catkin_ws/src/flexcraft/startup/scripts/flexcraft_onboard_start.sh
+Terminal=false
+Icon=/home/fcs_main/catkin_ws/src/flexcraft/startup/icons/flexyside.png
+Type=Application
+Comment=Currently a test of desktop files, but launches FlexCraft Software
