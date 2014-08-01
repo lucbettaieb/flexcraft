@@ -1,0 +1,13 @@
+<launch>
+        <!-- Bring up Kinect and processing nodelets -->
+        <include file="$(find openni_launch)/launch/openni.launch">
+
+        <!-- rosrun point_cloud pc_translator input:=/camera/depth_registered/sw_registered/image_rect_raw/compressed_depth -->
+
+
+</launch>
+
+
+
+
+
