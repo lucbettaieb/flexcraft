@@ -5,10 +5,9 @@
 			<param name="password" value="FreemanSR" />
 		</node>
 
-		<node pkg="image_transport" type="republish" name="Freeman_translate" respawn="true">
-			<param name="in" value="/image_raw" />
-			<param name="image_transport" value="compressed" />
-			<param name="out" value="image_left" />
+		<node pkg="image_transport" type="republish" name="republish" args="compressed" respawn="true">
+			<remap from="/Freeman/in" to="/Freeman/image_raw" />
+			<remap from="/Freeman/out" to="left_image" />
 		</node>
 	</group>
 
