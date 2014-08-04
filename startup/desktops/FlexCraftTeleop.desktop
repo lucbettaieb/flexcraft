@@ -5,6 +5,6 @@ GenericName=Application
 #This script has two inputs spacenav and keyboard (default is false)
 Exec=/home/fcs_main/catkin_ws/src/flexcraft/startup/scripts/flexcraft_teleop_start.sh false false
 Terminal=true
-Icon=~/catkin_ws/src/flexcraft/startup/icons/flexyside.png
+Icon=/home/fcs_main/catkin_ws/src/flexcraft/startup/icons/flexyside.png
 Type=Application
 Comment=Currently a test of desktop files, but launches FlexCraft Software

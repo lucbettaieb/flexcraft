@@ -12,30 +12,37 @@ sudo apt-get update
 
 sudo apt-get -y install ros-hydro-desktop-full
 
+sleep 1
+
 sudo rosdep init
 rosdep update
 
 echo "source /opt/ros/hydro/setup.bash" >> ~/.bashrc
+sleep 1
 source ~/.bashrc
 source /opt/ros/hydro/setup.bash
 
 
 #set up flexcraft code (assumes code already pulled as this file is in repository)
+sleep 1
 catkin_make
 
 #sources flexcraft file so ros knows of this code
 here=$PWD
 echo "source $here/devel/setup.bash" >> ~/.bashrc
+sleep 1
 source $here/devel/setup.bash
 
 #makes this terminal reset
 source ~/.bashrc
 
 #install some file dependencies
-sudo apt-get install -y ros-hydro-camera-info-manager-py
-rosdep install spacenav_node
+sleep 1
+rosdep -y install axis_camera
+rosdep -y install spacenav_node
 
 # remakes the system so it is good to go.  -j1 does it sequentially so not dependency errors
+sleep 1
 catkin_make -j1
 
 # create desktop files
