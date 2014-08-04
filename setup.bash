@@ -17,6 +17,8 @@ rosdep update
 
 echo "source /opt/ros/hydro/setup.bash" >> ~/.bashrc
 source ~/.bashrc
+source /opt/ros/hydro/setup.bash
+
 
 #set up flexcraft code (assumes code already pulled as this file is in repository)
 catkin_make
@@ -24,6 +26,7 @@ catkin_make
 #sources flexcraft file so ros knows of this code
 here=$PWD
 echo "source $here/devel/setup.bash" >> ~/.bashrc
+source $here/devel/setup.bash
 
 #makes this terminal reset
 source ~/.bashrc
