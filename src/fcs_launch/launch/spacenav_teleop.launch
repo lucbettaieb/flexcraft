@@ -1,8 +1,13 @@
 <launch>
+	<!-- this launch file starts the important nodes for teleoperation using the spacenav -->
 	
+	<!-- this launches the displays for the human user -->
 	<include file="$(find mr_tools)/launch/teleoperator.launch"/>
 
+	<!-- this node is the driver for the spacenav -->
 	<node name="spacenav" pkg="spacenav_node" type="spacenav_node" respawn="true" />
+
+	<!-- this node converts the driver output into fcs commands -->
 	<node name="hal9000" pkg="fcs_spacenav" type="spacenav" respawn="true" output="screen" />
 
 </launch>
