@@ -10,12 +10,13 @@ wget https://raw.githubusercontent.com/ros/rosdistro/master/ros.key -O - | sudo 
 
 sudo apt-get update
 
-sudo apt-get install ros-hydro-desktop-full
+sudo apt-get -y install ros-hydro-desktop-full
 
 sudo rosdep init
 rosdep update
 
 echo "source /opt/ros/hydro/setup.bash" >> ~/.bashrc
+source ~/.bashrc
 
 #set up flexcraft code (assumes code already pulled as this file is in repository)
 catkin_make
@@ -28,7 +29,7 @@ echo "source $here/devel/setup.bash" >> ~/.bashrc
 source ~/.bashrc
 
 #install some file dependencies
-sudo apt-get install ros-hydro-camera-info-manager-py
+sudo apt-get install -y ros-hydro-camera-info-manager-py
 rosdep install spacenav_node
 
 # remakes the system so it is good to go.  -j1 does it sequentially so not dependency errors
