@@ -1,0 +1,20 @@
+<launch>
+	<!-- this file starts all the nodes necessary for teleoperation flight -->
+
+	<!-- arguments for controllers launch file, allowing different controllers -->
+	<arg name="spacenav" default="false" />
+	<arg name="keyboard" default="false" />
+
+	<!-- Launch UI Joystick and User Interface in RQT-->
+	<!-- see mr_tools/launch/teleoperator.launch; may have to update xbox controller input (js0 or js1)-->
+	<!-- for more info see http://wiki.ros.org/mr_teleoperator/Tutorials/Getting%20Started -->
+	<include file="$(find mr_tools)/launch/teleoperator.launch"/>
+
+	<!-- This allows the user to easily run the different controllers -->
+	<include file="$(find controllers_launch)/launch/controllers.launch">
+		<arg name="spacenav" value="$(arg spacenav)" />
+		<arg name="keyboard" value="$(arg keyboard)" />
+	</include>
+
+
+</launch>
