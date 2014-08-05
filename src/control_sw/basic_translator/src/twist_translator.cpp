@@ -1,3 +1,14 @@
+/**********************************************************************
+/ twist_translator.cpp
+/ this node converts geometry_msgs/Twist into flexcraft_msgs/thrusters8 
+/ allow for controlling the flexcraft with standard Twist messages.
+/ It only uses x and y linear velociy and z angular velocity for commanding
+/ the thrusters currently. There is a threshold velocity that must be
+/ overcome for the thrusters to be fired.
+/
+/ Brayden Hollis
+************************************************************************/
+
 #include "ros/ros.h"
 #include "geometry_msgs/Twist.h"
 #include "flexcraft_msgs/thrusters8.h"
@@ -22,32 +33,32 @@ void twistCallback(const geometry_msgs::Twist::ConstPtr& msg) {
 
   if(msg->linear.x < -1*linear_thresh) {
 		// move backward - fire forward facing thrusters
-		ROS_INFO("Backward");
+		ROS_DEBUG("Backward");
 		thrusters = thrusters | flexcraft_msgs::thrusters8::RFB | flexcraft_msgs::thrusters8::LFB;
 	} else if(msg->linear.x > linear_thresh) {
 		// move forward - fire backward facing thrusters
-		ROS_INFO("Forward");
+		ROS_DEBUG("Forward");
 		thrusters = thrusters | flexcraft_msgs::thrusters8::RRF | flexcraft_msgs::thrusters8::LRF;
 	}
 
 	if(msg->linear.y < -1*linear_thresh) {
 		// move to right - fire left thrusters
-		ROS_INFO("Right");
+		ROS_DEBUG("Right");
 		thrusters = thrusters | flexcraft_msgs::thrusters8::LRR | flexcraft_msgs::thrusters8::LFR;
 	} else if(msg->linear.y > linear_thresh) {
 		// move to left - fire right thrusters
-		ROS_INFO("Left");
+		ROS_DEBUG("Left");
 		thrusters = thrusters | flexcraft_msgs::thrusters8::RRL | flexcraft_msgs::thrusters8::RFL;
 	}
 
 	// rotation - use side thrusters as more sysmetric from center of mass
 	if(msg->angular.z < -1*angle_thresh) {
 		// move clockwise
-		ROS_INFO("Clockwise");
+		ROS_DEBUG("Clockwise");
 		thrusters = thrusters | flexcraft_msgs::thrusters8::LFR | flexcraft_msgs::thrusters8::RRL;
 	} else if(msg->angular.z > angle_thresh) {
 		// move counterclockwise
-		ROS_INFO("Counterclockwise");
+		ROS_DEBUG("Counterclockwise");
 		thrusters = thrusters | flexcraft_msgs::thrusters8::LRR | flexcraft_msgs::thrusters8::RFL;
 	}
 }
@@ -58,7 +69,7 @@ int main(int argc, char **argv) {
 
 	ros::NodeHandle nh;
 
-	int rate;
+	int rate; // publishing rate - param able to be set at runtime
 	ros::param::param("~rate", rate, 10);
 
 	ros::Subscriber translator_sub = nh.subscribe("mid_cmd", 1, twistCallback);
@@ -72,7 +83,6 @@ int main(int argc, char **argv) {
 	while (ros::ok())	{
 		flexcraft_msgs::thrusters8 low_cmd_msg;
 
-//		low_cmd_msg.thrusters = 0;
 		low_cmd_msg.seq = count;
 		count++;
 

@@ -1,8 +1,16 @@
 <launch>
+	<!-- this launch file runs the basic nodes for controlling the fcs with a keyboard -->
+
+	<!-- this argument allows for user to change serial port connected to thruster arduino -->
 	<arg name="thruster_port" default="/dev/ttyACM0" />
 
+	<!-- this node converts fcs commands to thruster commands -->
 	<node name="c3po" pkg="basic_translator" type="basic_translator" respawn="true" />
+
+	<!-- this node reads the input from the keyboard and publishes fcs commands -->
 	<node name="hal9000" pkg="fcs_keyboard" type="aswd" respawn="true" output="screen"/>
+
+	<!-- this node creates a communication link with the thrusther arduino -->
 	<node name="slave" pkg="rosserial_python" type="serial_node.py" respawn="true">
 		<param name="~port" value="$(arg thruster_port)" />
 	</node>

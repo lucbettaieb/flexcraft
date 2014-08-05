@@ -1,9 +1,20 @@
 <launch>
+
+	<!-- This launch file launches the most basic set of nodes to run the flexcraft using the space nav to pilot it -->
+
+	<!-- this argument allows for setting the correct serial port for the arduino -->
 	<arg name="thruster_port" default="/dev/ttyACM0" />
 
+	<!-- this node converts the commands from the spacenav to thruster commands -->
 	<node name="c3po" pkg="basic_translator" type="basic_translator" respawn="true" />
+
+	<!-- this node is the driver for the spacenav -->
 	<node name="spacenav" pkg="spacenav_node" type="spacenav_node" respawn="true" />
+
+	<!-- this node takes the driver input and converts it to standard fcs commands -->
 	<node name="hal9000" pkg="fcs_spacenav" type="spacenav" respawn="true" output="screen" />
+
+	<!-- this node creates a communication port with the arduino for controlling the thrusters -->
 	<node name="slave" pkg="rosserial_python" type="serial_node.py" respawn="true">
 		<param name="~port" value="$(arg thruster_port)" />
 	</node>
