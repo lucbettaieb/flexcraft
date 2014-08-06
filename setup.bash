@@ -12,6 +12,11 @@ sudo apt-get update
 
 sudo apt-get -y install ros-hydro-desktop-full
 
+#These two commands are repeated as it does not seem to install correctly the first time
+sudo apt-get update
+
+sudo apt-get -y install ros-hydro-desktop-full
+
 sleep 1
 
 sudo rosdep init
@@ -40,6 +45,8 @@ source ~/.bashrc
 sleep 1
 rosdep -y install axis_camera
 rosdep -y install spacenav_node
+sudo apt-get -y install ros-hydro-openni-camera
+sudo apt-get -y install ros-hydro-openni-launch
 
 # remakes the system so it is good to go.  -j1 does it sequentially so not dependency errors
 sleep 1
