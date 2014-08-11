@@ -15,5 +15,10 @@ source ~/catkin_ws/src/flexcraft/devel/setup.bash
 #This sets the other computer as master
 export ROS_MASTER_URI=http://chandra:11311
 
+#config this computers ros variables for communication
+#ifconfig | grep 'inet addr:'| grep -v '127.0.0.1' | cut -d: -f2 | export ROS_IP=$1
+export ROS_IP=138.115.41.34
+export ROS_HOSTNAME=138.115.41.34
+
 #This actually launches code
 roslaunch fcs_launch start_teleop.launch spacenav:=$spacenav keyboard:=$keyboard
