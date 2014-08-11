@@ -26,15 +26,17 @@ source flexcraft/devel/setup.bash
 ```
 
 <h3>Included</h3>
+List of folders and files in this folder and lists of important subfolders/files
+
 - devel...........[folder] ROS generated folder
 - noncode.........[folder] contains related files that are not code
 - sketchbook......[folder] contains all arduino code for low level interfacing
 - src.............[folder] contains all source code, the main part of the repository
+	-- hello
+	-- bye 
 - startup.........[folder] contains desktop launch systems
 - README.md.......[text file] this file
 - setup.bash......[bash script] automated install script - installs ROS and entire system
-
-
 
 <h4>Note on thruster naming conventions:</h4>
 side (Left/Right) - side (front/rear) - direction it makes the craft go (backwards/forwards/right/left)
