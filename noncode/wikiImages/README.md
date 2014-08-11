@@ -10,6 +10,9 @@ Images for the github wiki.
 - README.md....................[text file] this file
 
 <h3>Added images to wiki from here</h3>
-- Images are added to the wiki with the format: ![alt text](url)
+- Images are added to the wiki with the format:
+```
+![alt text](url)
+```
 - The url for images in this folder is https://github.com/lucbettaieb/flexcraft/raw/master/noncode/wikiImages/pictureName.ext
 - Multiple formats are accepted.

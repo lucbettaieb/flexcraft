@@ -30,16 +30,16 @@ See wiki https://github.com/lucbettaieb/flexcraft/wiki/Install
 <h6>Old Setup</h6>
 After cloning into your local filesystem, here are steps to help you get going:
 ```
-~~#initialize the workspace~~
-~~cd path/to/flexcraft/src~~
-~~catkin_init_workspace~~
+#initialize the workspace
+cd path/to/flexcraft/src
+catkin_init_workspace
 
-~~#build the project for the first time~~
-~~cd ../~~
-~~catkin_make~~
+#build the project for the first time
+cd ../
+catkin_make
 
-~~#if things seem to not be working~~
-~~source flexcraft/devel/setup.bash~~
+#if things seem to not be working
+source flexcraft/devel/setup.bash
 ```
 
 <h3>Use</h3>
