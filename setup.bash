@@ -53,4 +53,4 @@ sleep 1
 catkin_make -j1
 
 # create desktop files
-./create_desktop.bash
+startup/scripts/create_desktop.bash
