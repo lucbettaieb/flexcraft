@@ -31,9 +31,20 @@ List of folders and files in this folder and lists of important subfolders/files
 - devel...........[folder] ROS generated folder
 - noncode.........[folder] contains related files that are not code
 - sketchbook......[folder] contains all arduino code for low level interfacing
+	- Actuators.........[folder] contains all low level (arduino) code for actuator control
+	- Human_Interfaces..[folder] contains all low level (arduino) code for human interfaces (both input and output)
+	- Sensors...........[folder] contains all low level (arduino) code for sensor reading
+	- libraries.........[folder] contains all non-default libraries used in arduino code
 - src.............[folder] contains all source code, the main part of the repository
-	-- hello
-	-- bye 
+	- autonomy..........[folder] contains all source code modules for autonomous movement
+	- control_sw........[folder] contains all source code modules for control software
+	- fcs_launch........[folder] contains all launch files that combine cross category modules, thus containing files to start system
+	- flexcraft_gazebo..[folder] contains all parts required strickly for gazebo simulation of system
+	- flexcraft_msgs....[folder] contains all custom ROS message definitions for flexcraft
+	- input_hi..........[folder] contains all source code modules for human interfaces input systems
+	- manipulator.......[folder] contains all source code modules for manipulators
+	- output_hi.........[folder] contains all source code modules for human interfaces output systems
+	- sensors...........[folder] contains all source code modules for sensors and sensor processing
 - startup.........[folder] contains desktop launch systems
 - README.md.......[text file] this file
 - setup.bash......[bash script] automated install script - installs ROS and entire system
