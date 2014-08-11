@@ -11,19 +11,40 @@ FCS is a physical test bed for development of the FlexCraft, a concept robotics 
 The software is built upon the Robot Operating System (ROS) as ROS provides communication and modularity capability and provides some pre-existing software.
 
 <h3>Install/Setup</h3>
+<h6>Automated Install</h6>
+```
+#clone repository
+git clone https://github.com/lucbettaieb/flexcraft.git
+
+#move into flexcraft directory
+cd flexcraft
+
+#run setup script - this takes a while and does have a few places for user input
+./setup.bash
+```
+
+<h6>Manual Install</h6>
+See wiki https://github.com/lucbettaieb/flexcraft/wiki/Install
+
+
+<h6>Old Setup</h6>
 After cloning into your local filesystem, here are steps to help you get going:
 ```
-#initialize the workspace
-cd path/to/flexcraft/src
-catkin_init_workspace
+~~#initialize the workspace~~
+~~cd path/to/flexcraft/src~~
+~~catkin_init_workspace~~
 
-#build the project for the first time
-cd ../
-catkin_make
+~~#build the project for the first time~~
+~~cd ../~~
+~~catkin_make~~
 
-#if things seem to not be working
-source flexcraft/devel/setup.bash
+~~#if things seem to not be working~~
+~~source flexcraft/devel/setup.bash~~
 ```
+
+<h3>Use</h3>
+To build the code, run catkin_make in flexcraft directory
+To run the code, use desktop launchers on desktop or in startup/desktops, use start scripts in startup/scripts, or use roslaunch.
 
 <h3>Included</h3>
 List of folders and files in this folder and lists of important subfolders/files
