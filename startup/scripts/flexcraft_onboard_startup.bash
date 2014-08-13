@@ -10,7 +10,7 @@ keyboard=$2
 
 #These setup ros as not using bash file
 source /opt/ros/hydro/setup.bash
-source ~/catkin_ws/src/flexcraft/devel/setup.bash
+source /home/fcs_main/catkin_ws/src/flexcraft/devel/setup.bash
 
 #This actually launches code
 roslaunch fcs_launch start_all.launch spacenav:=$spacenav keyboard:=$keyboard

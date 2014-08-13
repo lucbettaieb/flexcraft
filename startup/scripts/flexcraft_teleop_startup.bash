@@ -10,10 +10,15 @@ keyboard=$2
 
 #This sets up the ros environment
 source /opt/ros/hydro/setup.bash
-source ~/catkin_ws/src/flexcraft/devel/setup.bash
+source /home/fcs_main/catkin_ws/src/flexcraft/devel/setup.bash
 
 #This sets the other computer as master
 export ROS_MASTER_URI=http://chandra:11311
+
+#config this computers ros variables for communication
+ip=$(ifconfig | grep 'inet addr:'| grep -v '127.0.0.1' | cut -d: -f2 | cut -dB -f1)
+export ROS_IP=$ip
+export ROS_HOSTNAME=$ip
 
 #This actually launches code
 roslaunch fcs_launch start_teleop.launch spacenav:=$spacenav keyboard:=$keyboard

@@ -1,3 +1,5 @@
+// As far as I got along the pcl tutorials. This code in its current form is not per se relevant
+
 #include <ros/ros.h>
 //PCL specific
 #include <sensor_msgs/PointCloud2.h>
