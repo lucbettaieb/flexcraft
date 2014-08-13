@@ -1,3 +1,7 @@
+// This translates the raw kinect point cloud into a more useful from.
+// Copied from pcl tutorial. this is currently commented out in kinect_launch
+// takes an input topic argument
+
 #include <ros/ros.h>
 //PCL specific
 #include <sensor_msgs/PointCloud2.h>
