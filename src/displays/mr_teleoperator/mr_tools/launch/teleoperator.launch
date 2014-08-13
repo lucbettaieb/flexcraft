@@ -5,7 +5,7 @@
     </rosparam>
     
     <node name="joystick_teleoperator" pkg="mr_tools" type="joystick_teleoperator" output="screen">
-        <param name="dev" value="/dev/input/js0" />
+        <param name="dev" value="/dev/input/js1" />
     </node>
 
     <node name="rqt" pkg="rqt_gui" type="rqt_gui" output="screen" />
