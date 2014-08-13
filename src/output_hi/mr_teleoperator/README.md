@@ -1,9 +1,12 @@
 mr_teleoperator
 ===============
 
-<strong>Multi-robot teleoperation package collection</strong>
+<strong>This is an open source package</strong>
 
-A collection  of teleoperation modules utilizing a joystick (Xbox, PS) to control multiple robots.
+See: http://wiki.ros.org/mr_teleoperator/Tutorials/Getting%20Started
+
+A collection  of modules that allow one to utilizing a joystick (Xbox, PS) or the mouse or keyboard 
+to control the FCS.
 
 This collection includes: 
 <ul> 
@@ -11,7 +14,8 @@ This collection includes:
     Rqt plugin  for selecting and controling a specific robot.
   </li>
    <li>
-   A node that publishes a geometry_msgs/Twist message type.
+   A node that publishes a geometry_msgs/Twist message type. This is translated by
+   ui_translator.cpp in the control_sw package
    </li>
 </ul> 
 
