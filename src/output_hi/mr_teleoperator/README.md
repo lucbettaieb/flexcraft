@@ -5,8 +5,8 @@ This is an open source package, used here to control the FCS
 <br>
 See: http://wiki.ros.org/mr_teleoperator/Tutorials/Getting%20Started
 
-A collection  of modules that allow one to utilizing a joystick (Xbox, PS) or the mouse or keyboard 
-to control the FCS.
+A collection  of modules that allow one to utilize a joystick (Xbox, PS) or the mouse or keyboard 
+to control the FCS
 
 This collection includes: 
 <ul> 
