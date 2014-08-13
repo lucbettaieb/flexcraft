@@ -1,5 +1,12 @@
-//SAVED: This is for keyboard/mouse UI control
-
+/*************************************************************************/ 
+// ui_translator.cpp
+// This node translates geometry_msgs::Twist to flexcraft_msgs/deltaV2D.
+// This is very similar to twist translator, although the specfic message
+// subscribed to here is "flexcraft_ui_joystick/cmd_vel", which is what 
+// get published by the mr_tools package (a UI joystick widget for RQT)
+// See flexcraft/src/ and http://wiki.ros.org/mr_teleoperator/Tutorials/Getting%20Started
+// Eli Davis
+/************************************************************************/
 #include <ros/ros.h>
 #include <std_msgs/UInt8.h>
 #include <geometry_msgs/Twist.h>
