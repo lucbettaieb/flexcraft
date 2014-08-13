@@ -1,7 +1,8 @@
 mr_teleoperator
 ===============
 
-This is an open source package, used here to control FCS
+This is an open source package, used here to control the FCS
+<br>
 See: http://wiki.ros.org/mr_teleoperator/Tutorials/Getting%20Started
 
 A collection  of modules that allow one to utilizing a joystick (Xbox, PS) or the mouse or keyboard 
